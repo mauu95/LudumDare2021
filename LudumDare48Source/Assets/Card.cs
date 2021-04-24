@@ -12,7 +12,6 @@ public class Card : MonoBehaviour {
     }
 
     private void HealPlayer() {
-        print("Player healed");
         player.GetComponent<PlayerLifeManager>().Heal(30);
     }
 

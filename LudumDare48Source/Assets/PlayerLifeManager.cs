@@ -9,7 +9,6 @@ public class PlayerLifeManager : MonoBehaviour {
     public float maxLife = 100;
     protected float currentLife;
 
-    // Start is called before the first frame update
     void Start() {
         FillLife();
     }
@@ -32,6 +31,7 @@ public class PlayerLifeManager : MonoBehaviour {
     }
 
     private void UpdateVisual() {
-        healthText.text = "Health: " + currentLife;
+        if(healthText)
+            healthText.text = "Health: " + currentLife;
     }
 }

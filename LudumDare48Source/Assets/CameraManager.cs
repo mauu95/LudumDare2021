@@ -9,6 +9,11 @@ public class CameraManager : MonoBehaviour
     public float horizontalOffSet;
     public float verticalOffSet;
 
+    private void Start() {
+        if(!toFollow)
+            toFollow = FindObjectOfType<PlayerMovement>().transform;
+    }
+
     private void FixedUpdate()
     {
         Vector3 desiredPosition = toFollow.position;

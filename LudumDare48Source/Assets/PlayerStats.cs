@@ -6,17 +6,16 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class PlayerStats : MonoBehaviour
 {
     Light2D pointLight;
-
-    public int food;
+    Shop shop;
 
     private void Start() {
         pointLight = GetComponentInParent<Light2D>();
+        shop = FindObjectOfType<Shop>();
     }
 
     public void SetLightRadius(float amount){
         pointLight.pointLightOuterRadius = amount;
         pointLight.pointLightInnerRadius = amount/2;
     }
-
 
 }

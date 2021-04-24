@@ -2817,16 +2817,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4840211795276256710, guid: 0a94ba72b2de78145a4dde0b10d01735,
+    - target: {fileID: 4840211796296312062, guid: 0a94ba72b2de78145a4dde0b10d01735,
         type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5331144919414247185, guid: 0a94ba72b2de78145a4dde0b10d01735,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: healthText
       value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+      objectReference: {fileID: 1788544772}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a94ba72b2de78145a4dde0b10d01735, type: 3}
 --- !u!1 &4840211796296312060 stripped
@@ -2835,33 +2830,3 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4840211796296312059}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &4840211796296312061
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840211796296312060}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &4840211796296312062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840211796296312060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6869b3fedee549ba81d20bf3618915f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthText: {fileID: 1788544772}
-  maxLife: 100

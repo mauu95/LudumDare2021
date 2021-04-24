@@ -21,10 +21,11 @@ public class PlayerMovement: MonoBehaviour {
   }
 
   private void DashToward(Vector3 position){
-    Vector3 current = transform.position;
-    Vector3 target = position;
-
-    Vector3 direction = target - current;
+    Vector3 direction = position - transform.position;
     rb.velocity = direction.normalized * speed;
+    
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+    transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
   }
+
 }

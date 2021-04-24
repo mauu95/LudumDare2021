@@ -3,19 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement: MonoBehaviour {
-  // Start is called before the first frame update
-  public float speed;
-  void Start() {
 
+  public float speed;
+
+  private Rigidbody2D rb;
+  private void Start() {
+    rb = GetComponent<Rigidbody2D>();
   }
 
-  // Update is called once per frame
   void Update() {
-    if (Input.GetButtonDown("Fire1")) {
+    if (Input.GetMouseButton(0)) {
       Vector3 mousePos = Input.mousePosition;
       mousePos.z = Camera.main.nearClipPlane;
       Vector3 worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
-      Debug.Log(worldPosition.x + "," + worldPosition.y);
+      DashToward(worldPosition);
     }
+  }
+
+  private void DashToward(Vector3 position){
+    Vector3 current = transform.position;
+    Vector3 target = position;
+
+    Vector3 direction = target - current;
+    rb.velocity = direction.normalized * speed;
   }
 }

@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DamageDealer : MonoBehaviour {
+    public bool isPlayer = false;
+    // Start is called before the first frame update
+    void Start() {
+
+    }
+
+    // Update is called once per frame
+    void Update() {
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision) {
+        // look for spikes
+        DamageDealer otherDamageDealer = null;
+        foreach (var c in collision.contacts) {
+            otherDamageDealer = c.collider.gameObject.GetComponent<DamageDealer>();
+            // found a spike!
+            if (otherDamageDealer) {
+                break;
+            }
+        }
+
+        // collision with other spike
+        if (otherDamageDealer) {
+            // TODO: should disable damage for some time on both spikes...
+            Debug.Log("collided with another spike!");
+            return;
+        }
+        bool otherIsPlayer = collision.gameObject.tag == "Player";
+        if (!isPlayer && otherIsPlayer || isPlayer) {
+            var lifeManager = collision.gameObject.GetComponent<LifeManager>();
+            lifeManager.DealDamage(50);
+            Debug.Log(lifeManager);
+        }
+    }
+}

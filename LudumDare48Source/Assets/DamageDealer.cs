@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour {
     public bool isPlayer = false;
+    public float damage = 50;
     // Start is called before the first frame update
     void Start() {
 
@@ -33,8 +34,7 @@ public class DamageDealer : MonoBehaviour {
         bool otherIsPlayer = collision.gameObject.tag == "Player";
         if (!isPlayer && otherIsPlayer || isPlayer) {
             var lifeManager = collision.gameObject.GetComponent<LifeManager>();
-            lifeManager.DealDamage(50);
-            Debug.Log(lifeManager);
+            if (lifeManager) lifeManager.DealDamage(damage);
         }
     }
 }

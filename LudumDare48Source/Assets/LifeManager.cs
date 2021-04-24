@@ -17,7 +17,9 @@ public class LifeManager : MonoBehaviour {
 
     public void DealDamage(float damage) {
         maxLife -= damage;
-        if (maxLife <= 0) Destroy(this.gameObject);
+        if (maxLife <= 0) {
+            MobManager.instance.DestroyEnemy(this.gameObject);
+        }
     }
 
 }

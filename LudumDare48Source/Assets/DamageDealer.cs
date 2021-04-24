@@ -28,5 +28,10 @@ public class DamageDealer : MonoBehaviour {
             var lifeManager = collision.gameObject.GetComponent<LifeManager>();
             if (lifeManager) lifeManager.DealDamage(damage);
         }
+        if (isPlayer) {
+            var rb = this.gameObject.GetComponentInParent<Rigidbody2D>();
+            var controller = collision.gameObject.GetComponent<EnemyMovement>();
+            controller.Bump(rb.velocity);
+        }
     }
 }

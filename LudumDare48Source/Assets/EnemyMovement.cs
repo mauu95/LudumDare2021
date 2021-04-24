@@ -7,9 +7,14 @@ public class EnemyMovement : MonoBehaviour {
     public GameObject player;
     public float maxDistanceFromPlayer = 100;
 
+
+    private Rigidbody2D rb;
     private Vector3 target;
+
+
     // Start is called before the first frame update
     void Start() {
+        rb = GetComponent<Rigidbody2D>();
         Reset();
     }
 
@@ -35,6 +40,7 @@ public class EnemyMovement : MonoBehaviour {
     }
 
     public void Reset() {
+        rb.velocity = Vector3.zero;
         SelfPositionAroundPlayer();
         GoToNewTarget();
     }
@@ -50,6 +56,10 @@ public class EnemyMovement : MonoBehaviour {
     void GoToNewTarget() {
         Vector2 diff = Random.insideUnitCircle * 10;
         target = transform.position + new Vector3(diff.x, diff.y);
+    }
+
+    public void Bump(Vector3 velocity) {
+        rb.velocity = 3 * velocity;
     }
 
 }

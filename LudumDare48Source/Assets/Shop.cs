@@ -23,6 +23,10 @@ public class Shop : MonoBehaviour
         shopUI.SetActive(true);
     }
 
+    public void addMoney(){
+        addMoney(1);
+    }
+
     public void addMoney(int amount){
         money += amount;
 

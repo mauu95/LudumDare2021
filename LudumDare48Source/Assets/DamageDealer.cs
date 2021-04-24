@@ -20,7 +20,7 @@ public class DamageDealer : MonoBehaviour {
         // collision with other spike
         if (otherDamageDealer) {
             // TODO: should disable damage for some time on both spikes...
-            Debug.Log("collided with another spike!");
+            //Debug.Log("collided with another spike!");
             return;
         }
         bool otherIsPlayer = collision.gameObject.tag == "Player";

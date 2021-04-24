@@ -24,14 +24,20 @@ public class DamageDealer : MonoBehaviour {
             return;
         }
         bool otherIsPlayer = collision.gameObject.tag == "Player";
-        if (!isPlayer && otherIsPlayer || isPlayer) {
-            var lifeManager = collision.gameObject.GetComponent<LifeManager>();
-            if (lifeManager) lifeManager.DealDamage(damage);
-        }
         if (isPlayer) {
+            var lifeManager = collision.gameObject.GetComponent<EnemyLifeManager>();
+            lifeManager.DealDamage(damage);
             var rb = this.gameObject.GetComponentInParent<Rigidbody2D>();
             var controller = collision.gameObject.GetComponent<EnemyMovement>();
             controller.Bump(rb.velocity);
+        }
+        if (otherIsPlayer) {
+            var lifeManager = collision.gameObject.GetComponent<PlayerLifeManager>();
+            lifeManager.DealDamage(damage);
+            var bumpDirection = (collision.gameObject.transform.position - transform.position).normalized;
+            var controller = collision.gameObject.GetComponentInParent<PlayerMovement>();
+            controller.Bump(bumpDirection * 10);
+
         }
     }
 }

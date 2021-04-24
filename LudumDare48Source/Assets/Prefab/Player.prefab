@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc075ef56431ce349a01e1f16debc35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointLight: {fileID: 1194827894}
+  food: 0
 --- !u!1 &4840211796016066961
 GameObject:
   m_ObjectHideFlags: 0

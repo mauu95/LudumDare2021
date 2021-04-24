@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+  player: {fileID: 0}
+  maxDistanceFromPlayer: 100
 --- !u!114 &8403832775849047526
 MonoBehaviour:
   m_ObjectHideFlags: 0

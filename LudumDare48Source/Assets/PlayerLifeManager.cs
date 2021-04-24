@@ -15,6 +15,7 @@ public class PlayerLifeManager : MonoBehaviour {
 
     public void FillLife() {
         currentLife = maxLife;
+        UpdateVisual();
     }
 
     public void Heal(float amount) {

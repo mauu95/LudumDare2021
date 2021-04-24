@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
-{
+public class Card : MonoBehaviour {
     public int cardType;
 
     private GameObject player;
@@ -12,15 +11,15 @@ public class Card : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>().gameObject;
     }
 
-    private void HealPlayer(){
+    private void HealPlayer() {
         print("Player healed");
-        player.GetComponent<LifeManager>().FillLife();
+        player.GetComponent<PlayerLifeManager>().FillLife();
     }
 
-    public void onPress(){
-        if(!player)return;
+    public void onPress() {
+        if (!player) return;
 
-        if(cardType == 0){}
+        if (cardType == 0)
             HealPlayer();
     }
 }

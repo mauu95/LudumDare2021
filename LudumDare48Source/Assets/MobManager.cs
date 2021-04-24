@@ -40,10 +40,10 @@ public class MobManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        for (int i = 0; i < enemies.Count; i++) {
-            if ((enemies[i].transform.position - player.transform.position).magnitude >= maxDistance) {
-                Destroy(enemies[i]);
+        foreach (GameObject g in enemies) {
+            if ((g.transform.position - player.transform.position).magnitude >= maxDistance) {
+                DestroyEnemy(g);
             }
-        }
+        };
     }
 }

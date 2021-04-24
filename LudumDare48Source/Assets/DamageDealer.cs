@@ -5,15 +5,7 @@ using UnityEngine;
 public class DamageDealer : MonoBehaviour {
     public bool isPlayer = false;
     public float damage = 50;
-    // Start is called before the first frame update
-    void Start() {
 
-    }
-
-    // Update is called once per frame
-    void Update() {
-
-    }
     private void OnCollisionEnter2D(Collision2D collision) {
         // look for spikes
         DamageDealer otherDamageDealer = null;

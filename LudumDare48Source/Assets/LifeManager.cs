@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class LifeManager : MonoBehaviour {
     public float maxLife = 100;
+    private float currentLife;
 
     // Start is called before the first frame update
     void Start() {
-
+        FillLife();
     }
 
-    // Update is called once per frame
-    void Update() {
-
+    public void FillLife() {
+        currentLife = maxLife;
     }
 
     public void DealDamage(float damage) {
-        maxLife -= damage;
-        if (maxLife <= 0) {
-            MobManager.instance.DestroyEnemy(this.gameObject);
+        currentLife -= damage;
+        if (currentLife <= 0) {
+            this.gameObject.GetComponent<EnemyMovement>().Die();
+            FillLife();
         }
     }
 

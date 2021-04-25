@@ -17,6 +17,12 @@ public class Shop : MonoBehaviour
     public void OpenShop(){
         shopUI.SetActive(true);
         shopUI.GetComponent<ShopUI>().EnableAllCards();
+        GameManager.instance.slowTime(true);
+    }
+
+    public void CloseShop(){
+        shopUI.SetActive(false);
+        GameManager.instance.slowTime(false);
     }
 
     public void purchaseHeal(){

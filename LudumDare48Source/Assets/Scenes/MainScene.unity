@@ -339,6 +339,18 @@ MonoBehaviour:
   toFollow: {fileID: 1157460286}
   horizontalOffSet: 0
   verticalOffSet: 0
+--- !u!114 &1911181580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 987025844282386713, guid: 54174a2c674572e44b18ff5222794266,
+    type: 3}
+  m_PrefabInstance: {fileID: 8166125483019517298}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c192f171f737741896f8dddd40e939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2005591151
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,6 +478,67 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1963008825, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963008825, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1911181580}
+    - target: {fileID: 1963008825, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CloseShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963008825, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740371257207089994, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740371257207089994, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261465105525356784, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261465105525356784, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039260, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039260, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1911181580}
+    - target: {fileID: 7308472026938039260, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CloseShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039260, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472027264397237, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7308472027641189963, guid: 54174a2c674572e44b18ff5222794266,
         type: 3}
       propertyPath: m_RootOrder
@@ -525,6 +598,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Managers&UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058515099494121716, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058515099494121716, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1911181580}
+    - target: {fileID: 9058515099494121716, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: CloseShop
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058515099494121716, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54174a2c674572e44b18ff5222794266, type: 3}

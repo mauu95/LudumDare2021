@@ -27,20 +27,9 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public void CursorOff() {
-        //Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-
-    public void CursorOn() {
-        Cursor.visible = true;
-        //Cursor.lockState = CursorLockMode.None;
-    }
-
     public void PauseGame() {
         IsGamePaused = true;
         Time.timeScale = 0.0f;
-        CursorOn();
         if (pauseMenu)
             pauseMenu.SetActive(true);
     }
@@ -48,7 +37,6 @@ public class GameManager : MonoBehaviour {
     public void ResumeGame() {
         IsGamePaused = false;
         Time.timeScale = 1.0f;
-        CursorOff();
         if (pauseMenu)
             pauseMenu.SetActive(false);
     }
@@ -61,6 +49,13 @@ public class GameManager : MonoBehaviour {
         this.score = score;
         lost = true;
         SceneManager.LoadScene("MenuScene");
+    }
+
+    public void slowTime(bool yesno){
+        if(yesno)
+            Time.timeScale = 0.1f;
+        else
+            Time.timeScale = 1f;
     }
 
     public void QuitGame() => Application.Quit();

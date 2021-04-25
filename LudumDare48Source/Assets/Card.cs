@@ -5,20 +5,20 @@ using UnityEngine;
 public class Card : MonoBehaviour {
     public int cardType;
 
-    private GameObject player;
+    private Shop shop;
 
     private void Start() {
-        player = FindObjectOfType<PlayerMovement>().gameObject;
-    }
-
-    private void HealPlayer() {
-        player.GetComponent<PlayerLifeManager>().Heal(30);
+        shop = FindObjectOfType<Shop>();
     }
 
     public void onPress() {
-        if (!player) return;
+        if (!shop) return;
 
         if (cardType == 0)
-            HealPlayer();
+            shop.HealPlayer();
+        else if(cardType == 1)
+            shop.IncreaseLightRadius();
+        else
+            Debug.LogError("No such card ID");
     }
 }

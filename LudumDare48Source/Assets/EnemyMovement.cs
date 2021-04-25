@@ -36,7 +36,7 @@ public class EnemyMovement : MonoBehaviour {
 
     public void Die() {
         // TODO: spawn meat or stuff for the player to eat
-        Shop.instance.addMoney();
+        FindObjectOfType<Shop>().addMoney();
         Reset();
     }
 

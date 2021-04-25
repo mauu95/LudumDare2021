@@ -307,6 +307,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58b9375c068e442818000a51bb0a7aa6, type: 3}
+--- !u!114 &188488536 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 987025844282386713, guid: 54174a2c674572e44b18ff5222794266,
+    type: 3}
+  m_PrefabInstance: {fileID: 962962018}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87c192f171f737741896f8dddd40e939, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &216135661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -799,6 +811,108 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1963008822, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_Name
+      value: EnergyCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963008823, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963008823, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963008823, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963008823, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963008825, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 188488536}
+    - target: {fileID: 1963008825, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: purchaseEnergy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963008825, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 129473569207192681, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_Name
+      value: HealCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 832669072354141160, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832669072354141160, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832669072354141160, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 832669072354141160, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039260, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039260, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 188488536}
+    - target: {fileID: 7308472026938039260, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: purchaseLight
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039260, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039261, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039261, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039261, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039261, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7308472026938039262, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_Name
+      value: LightCard
+      objectReference: {fileID: 0}
     - target: {fileID: 7308472027641189963, guid: 54174a2c674572e44b18ff5222794266,
         type: 3}
       propertyPath: m_RootOrder
@@ -858,6 +972,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Managers&UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058515099494121716, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 188488536}
+    - target: {fileID: 9058515099494121716, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: purchaseHeal
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058515099494121716, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54174a2c674572e44b18ff5222794266, type: 3}
@@ -1698,6 +1827,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58b9375c068e442818000a51bb0a7aa6, type: 3}
+--- !u!1 &1438316435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7308472026938039262, guid: 54174a2c674572e44b18ff5222794266,
+    type: 3}
+  m_PrefabInstance: {fileID: 962962018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1438316436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438316435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6ee14078d9c3e43b3fdbe9a235414b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1497038611
 PrefabInstance:
   m_ObjectHideFlags: 0

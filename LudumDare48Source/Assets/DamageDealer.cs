@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DamageDealer : MonoBehaviour {
     public bool isPlayer = false;
-    public float damage = 50;
+    public int damage = 50;
 
     private void OnCollisionEnter2D(Collision2D collision) {
         // look for spikes

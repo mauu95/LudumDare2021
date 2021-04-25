@@ -6,33 +6,33 @@ using TMPro;
 
 public class PlayerLifeManager : MonoBehaviour {
     public TextMeshProUGUI healthText;
-    public float maxLife = 100;
-    protected float currentLife;
+    public int maxHealth = 100;
+    public int health;
 
     void Start() {
         FillLife();
     }
 
     public void FillLife() {
-        currentLife = maxLife;
+        health = maxHealth;
         UpdateVisual();
     }
 
-    public void Heal(float amount) {
-        currentLife += amount;
-        if (currentLife >= maxLife)
-            currentLife = maxLife;
+    public void Heal(int amount) {
+        health += amount;
+        if (health >= maxHealth)
+            health = maxHealth;
         UpdateVisual();
     }
 
 
-    public void DealDamage(float damage) {
-        currentLife -= damage;
+    public void DealDamage(int damage) {
+        health -= damage;
         UpdateVisual();
     }
 
     private void UpdateVisual() {
         if(healthText)
-            healthText.text = "Health: " + currentLife;
+            healthText.text = "Health: " + health;
     }
 }

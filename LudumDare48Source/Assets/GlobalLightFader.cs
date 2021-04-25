@@ -7,8 +7,8 @@ public class GlobalLightFader : MonoBehaviour
 {
     Transform player;
     Light2D globalLight;
-    public float nzone = 10;
-    public int zonesize = 100;
+    
+    public float bottomDepth;
 
     [Range(0f,1f)]
     public float mininum;
@@ -22,10 +22,9 @@ public class GlobalLightFader : MonoBehaviour
     void FixedUpdate() {
         if(!player) return;
 
-        int deepLevel = (int)(-player.position.y / zonesize);
+        float intensity = (bottomDepth + player.position.y) / bottomDepth;
 
-        float intensity = (nzone-deepLevel)/nzone;
-        if(intensity<mininum)
+        if(intensity < mininum)
             intensity = mininum;
 
         globalLight.intensity = intensity;

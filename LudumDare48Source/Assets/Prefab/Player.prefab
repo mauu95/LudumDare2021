@@ -283,6 +283,7 @@ GameObject:
   - component: {fileID: 365155673}
   - component: {fileID: 4840211796296312061}
   - component: {fileID: 4840211796296312062}
+  - component: {fileID: 717066658}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -385,6 +386,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
+--- !u!114 &717066658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840211795276256710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb5978ce8b138774cbe75092d5310ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLight: {fileID: 365155673}
+  energy: 0
+  decay: 1
 --- !u!1 &4840211796016066961
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class PlayerLifeManager : MonoBehaviour {
     }
 
     public void SetMaxHealth() {
-        SetHealth(maxHealth);
+        Heal(1000);
     }
 
     public void Heal(int amount) {

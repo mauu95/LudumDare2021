@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 224383896641145578, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224383896641145578, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261465105525356784, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3261465105525356784, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7308472027641189963, guid: 54174a2c674572e44b18ff5222794266,
         type: 3}
       propertyPath: m_RootOrder
@@ -281,18 +301,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4840211796296312059}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1788544772 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1788544772, guid: 54174a2c674572e44b18ff5222794266,
-    type: 3}
-  m_PrefabInstance: {fileID: 962962018}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1813996657
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,10 +440,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1194827894, guid: 0a94ba72b2de78145a4dde0b10d01735, type: 3}
-      propertyPath: m_Intensity
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4840211795276256709, guid: 0a94ba72b2de78145a4dde0b10d01735,
         type: 3}
       propertyPath: m_RootOrder
@@ -496,10 +500,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4840211796296312062, guid: 0a94ba72b2de78145a4dde0b10d01735,
-        type: 3}
-      propertyPath: healthText
-      value: 
-      objectReference: {fileID: 1788544772}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a94ba72b2de78145a4dde0b10d01735, type: 3}

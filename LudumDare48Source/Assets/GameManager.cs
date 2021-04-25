@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 
     public void slowTime(bool yesno) {
         if (yesno)
-            Time.timeScale = 0.05f;
+            Time.timeScale = 0f;
         else
             Time.timeScale = 1f;
     }

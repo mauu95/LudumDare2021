@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerEnergyManager : MonoBehaviour
 {
-    public PlayerStats playerLight;
+    PlayerStats playerLight;
+    PlayerLifeManager playerHealth;
 
     [Range(0,100)]
     public int energy;
@@ -15,7 +16,10 @@ public class PlayerEnergyManager : MonoBehaviour
     public OnEnergyChanged onEnergyChangedCallback;
 
     void Start() {
+        playerLight = GetComponent<PlayerStats>();
+        playerHealth = GetComponent<PlayerLifeManager>();
         InvokeRepeating("ConsumeEnergy", 2f, 1f);
+        InvokeRepeating("ConsumeHealth", 2f, 1f);
     }
 
     public void FillEnergy(){
@@ -34,6 +38,11 @@ public class PlayerEnergyManager : MonoBehaviour
         if(energy == 0){
             playerLight.SwitchOffPointLight();
         }
+    }
+
+    private void ConsumeHealth(){
+        if(energy>0)return;
+        playerHealth.TakeDamage(decay);
     }
 
 

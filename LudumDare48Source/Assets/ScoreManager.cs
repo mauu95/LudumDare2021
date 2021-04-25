@@ -23,7 +23,8 @@ public class ScoreManager : MonoBehaviour {
     }
 
     public void GameEnd(int score) {
-        this.score = score;
+        if (score > this.score)
+            this.score = score;
         lost = true;
         SceneManager.LoadScene("MenuScene");
         Time.timeScale = 1f;

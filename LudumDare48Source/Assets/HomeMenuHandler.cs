@@ -8,7 +8,7 @@ public class HomeMenuHandler : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         if (ScoreManager.instance.lost) {
-            score.text = "Score: " + ScoreManager.instance.score;
+            score.text = "Highscore: " + ScoreManager.instance.score;
         } else {
             score.gameObject.SetActive(false);
             tryAgainLabel.SetActive(false);

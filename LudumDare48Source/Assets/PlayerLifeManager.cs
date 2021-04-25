@@ -49,7 +49,8 @@ public class PlayerLifeManager : MonoBehaviour {
     IEnumerator EndGame() {
         Time.timeScale = 0.05f;
         yield return new WaitForSecondsRealtime(2);
-        ScoreManager.instance.GameEnd(100); // TODO: get actual score
+        int maxScore = GetComponent<PlayerScoreManager>().GetMaxScore();
+        ScoreManager.instance.GameEnd(maxScore);
     }
 
 

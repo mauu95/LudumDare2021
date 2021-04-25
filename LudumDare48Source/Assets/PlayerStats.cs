@@ -10,10 +10,13 @@ public class PlayerStats : MonoBehaviour
 
     float lightRadius = 0;
 
+    private float lightIntensity;
+
     private void Start() {
         pointLight = GetComponentInChildren<Light2D>();
         shop = FindObjectOfType<Shop>();
         SetLightRadius(lightRadius);
+        lightIntensity = pointLight.intensity;
     }
 
     public void SetLightRadius(float amount){
@@ -24,6 +27,14 @@ public class PlayerStats : MonoBehaviour
 
     public void IncreaseLightRadius(){
         SetLightRadius(lightRadius + 5f);
+    }
+
+    public void SwitchOffPointLight(){
+        pointLight.intensity = 0;
+    }
+
+    public void SwitchOnPointLight(){
+        pointLight.intensity = lightIntensity;
     }
 
 }

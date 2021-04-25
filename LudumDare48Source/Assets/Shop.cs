@@ -30,6 +30,7 @@ public class Shop : MonoBehaviour
     }
 
     public void purchaseEnergy(){
+        player.GetComponent<PlayerEnergyManager>().FillEnergy();
         spendMoney(price);
     }
 

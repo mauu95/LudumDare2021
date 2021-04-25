@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLight: {fileID: 365155673}
-  energy: 0
+  energy: 100
   decay: 1
 --- !u!1 &4840211796016066961
 GameObject:

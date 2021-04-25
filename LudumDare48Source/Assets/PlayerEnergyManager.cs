@@ -15,12 +15,12 @@ public class PlayerEnergyManager : MonoBehaviour
     public OnEnergyChanged onEnergyChangedCallback;
 
     void Start() {
-        FillEnergy();
         InvokeRepeating("ConsumeEnergy", 2f, 1f);
     }
 
     public void FillEnergy(){
         energy = 100;
+        playerLight.SwitchOnPointLight();
     }
 
     private void ConsumeEnergy(){
@@ -30,6 +30,10 @@ public class PlayerEnergyManager : MonoBehaviour
         
         if(onEnergyChangedCallback != null)
             onEnergyChangedCallback.Invoke();
+
+        if(energy == 0){
+            playerLight.SwitchOffPointLight();
+        }
     }
 
 

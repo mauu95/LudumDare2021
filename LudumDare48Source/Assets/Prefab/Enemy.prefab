@@ -167,6 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLife: 100
+  deadFishPrefab: {fileID: 4511321653741205301, guid: da4c99613cb544b29978c28bd9fbfc51,
+    type: 3}
 --- !u!50 &8403832775849047522
 Rigidbody2D:
   serializedVersion: 4

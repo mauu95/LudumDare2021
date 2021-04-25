@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BackgroundCreatureHandler : MonoBehaviour {
     public float movementSpeed = 0.5f;
-    public float maxDistanceFromPlayer = 100;
+    public float maxDistanceFromPlayer = 50;
 
     private GameObject player;
     private SpriteRenderer spriteRenderer;
@@ -14,7 +14,7 @@ public class BackgroundCreatureHandler : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         player = PlayerMovement.instance.gameObject;
-        SelfPositionAroundPlayer();
+        SelfPositionAroundPlayer(true);
         spriteRenderer = GetComponent<SpriteRenderer>();
         customAlphaSeed = Random.value * 20;
     }
@@ -40,14 +40,18 @@ public class BackgroundCreatureHandler : MonoBehaviour {
     }
 
     public void Reset() {
-        SelfPositionAroundPlayer();
+        SelfPositionAroundPlayer(false);
         GoToNewTarget();
     }
 
-    public void SelfPositionAroundPlayer() {
+    public void SelfPositionAroundPlayer(bool initialSpawn) {
         var randomPosition = Random.insideUnitCircle * 50;
         var playerPos = player.transform.position;
         var position = new Vector3(playerPos.x + randomPosition.x, playerPos.y + randomPosition.y);
+        if (!initialSpawn && (position - playerPos).magnitude < 20) {
+            var vector = (position - playerPos).normalized * 20;
+            position += vector;
+        }
         transform.position = position;
     }
 

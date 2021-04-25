@@ -15,7 +15,7 @@ public class PlayerScoreManager : MonoBehaviour {
             MobManager.instance.AddSharks();
         }
         maxScore = (int)max;
-        scoreText.text = "Depth: " + maxScore;
+        scoreText.text = "Max depth: " + maxScore;
     }
 
     public int GetMaxScore() {

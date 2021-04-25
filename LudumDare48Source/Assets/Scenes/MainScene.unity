@@ -1042,6 +1042,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4375336464664174130, guid: 260269c26e7d24f2a8a4fb11b7bc7651,
         type: 3}
+    - target: {fileID: 881455676, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: sharkPrefab
+      value: 
+      objectReference: {fileID: 4375336464664174130, guid: 260269c26e7d24f2a8a4fb11b7bc7651,
+        type: 3}
+    - target: {fileID: 881455676, guid: 54174a2c674572e44b18ff5222794266, type: 3}
+      propertyPath: swordFishPrefab
+      value: 
+      objectReference: {fileID: 8403832775849047529, guid: 58b9375c068e442818000a51bb0a7aa6,
+        type: 3}
     - target: {fileID: 1740371257207089994, guid: 54174a2c674572e44b18ff5222794266,
         type: 3}
       propertyPath: m_AnchorMax.x

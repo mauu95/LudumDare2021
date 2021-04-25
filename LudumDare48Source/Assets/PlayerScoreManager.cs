@@ -11,8 +11,11 @@ public class PlayerScoreManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         float max = Mathf.Max(-transform.position.y, maxScore);
+        if (max >= 200 && maxScore < 200) {
+            MobManager.instance.AddSharks();
+        }
         maxScore = (int)max;
-        scoreText.text = "Score: " + maxScore;
+        scoreText.text = "Depth: " + maxScore;
     }
 
     public int GetMaxScore() {

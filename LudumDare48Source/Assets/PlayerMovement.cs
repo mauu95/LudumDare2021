@@ -7,6 +7,13 @@ public class PlayerMovement : MonoBehaviour {
     public float speed;
 
     private Rigidbody2D rb;
+    public static PlayerMovement instance;
+
+    private void Awake() {
+        if (instance) Destroy(gameObject);
+        instance = this;
+    }
+
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
     }

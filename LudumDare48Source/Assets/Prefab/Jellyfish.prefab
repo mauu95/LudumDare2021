@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 899131126094798387}
   - component: {fileID: 4024640137506485931}
   - component: {fileID: 7974018847339314436}
+  - component: {fileID: -2893113327728331196}
   m_Layer: 0
   m_Name: Jellyfish
   m_TagString: Untagged
@@ -71,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 673a85a7ca51142c5be50d245b673213, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,3 +103,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2893113327728331196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4015571233039618994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b9d3f2a7dbca47fbae5c9c76a1daff3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

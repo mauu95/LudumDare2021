@@ -15,7 +15,6 @@ public class MobManager : MonoBehaviour {
 
     public static MobManager instance;
 
-    // Start is called before the first frame update
     void Start() {
         if (instance) Destroy(this.gameObject);
         instance = this;
@@ -36,10 +35,8 @@ public class MobManager : MonoBehaviour {
     }
 
 
-    // Update is called once per frame
     void Update() {
         elapsedTime += Time.deltaTime;
-        Debug.Log(elapsedTime + ", " + changeAggroInterval);
         if (elapsedTime >= changeAggroInterval) {
             elapsedTime = 0;
             RemoveAggroToEveryone();

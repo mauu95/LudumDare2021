@@ -26,7 +26,11 @@ public class EnemyMovement : MonoBehaviour {
         var direction = (targetPosition - transform.position).normalized;
         transform.position = transform.position + direction * Time.deltaTime * speed;
 
-        ComputeRotation(direction);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float currentAngle = transform.rotation.eulerAngles.z;
+        float theAngle = Mathf.LerpAngle(currentAngle, angle, Time.deltaTime * rotatioSpeed);
+
+        transform.rotation = Quaternion.AngleAxis(theAngle, Vector3.forward);
 
         if (!isAggred && (target - transform.position).magnitude < 0.5) {
             GoToNewTarget();
@@ -34,14 +38,6 @@ public class EnemyMovement : MonoBehaviour {
         if ((transform.position - player.transform.position).magnitude >= maxDistanceFromPlayer) {
             Reset();
         }
-    }
-
-    protected void ComputeRotation(Vector3 direction) {
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        float currentAngle = transform.rotation.eulerAngles.z;
-        float theAngle = Mathf.LerpAngle(currentAngle, angle, Time.deltaTime * rotatioSpeed);
-
-        transform.rotation = Quaternion.AngleAxis(theAngle, Vector3.forward);
     }
 
     public void Die() {
@@ -64,6 +60,8 @@ public class EnemyMovement : MonoBehaviour {
             var vector = (position - playerPos).normalized * 20;
             position += vector;
         }
+        if (position.y > 0)
+            position.y = -position.y;
         transform.position = position;
     }
 
@@ -78,6 +76,9 @@ public class EnemyMovement : MonoBehaviour {
         if (!isAggred) {
             Vector2 diff = Random.insideUnitCircle * 10;
             target = transform.position + new Vector3(diff.x, diff.y);
+            if (target.y > 0) {
+                target.y = -target.y;
+            }
         }
     }
 

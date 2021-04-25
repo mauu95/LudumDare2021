@@ -33,7 +33,7 @@ public class DamageDealer : MonoBehaviour {
         }
         if (otherIsPlayer) {
             var lifeManager = collision.gameObject.GetComponent<PlayerLifeManager>();
-            lifeManager.DealDamage(damage);
+            lifeManager.TakeDamage(damage);
             var bumpDirection = (collision.gameObject.transform.position - transform.position).normalized;
             var controller = collision.gameObject.GetComponentInParent<PlayerMovement>();
             controller.Bump(bumpDirection * 10);

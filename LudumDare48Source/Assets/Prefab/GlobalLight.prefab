@@ -86,5 +86,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nzone: 10
-  zonesize: 10
-  mininum: 0.12
+  zonesize: 5
+  mininum: 0.02

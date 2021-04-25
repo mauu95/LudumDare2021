@@ -20,7 +20,7 @@ public class Shop : MonoBehaviour
     }
 
     public void purchaseHeal(){
-        player.GetComponent<PlayerLifeManager>().FillLife();
+        player.GetComponent<PlayerLifeManager>().SetMaxHealth();
         spendMoney(price);
     }
 

@@ -5,34 +5,36 @@ using TMPro;
 
 
 public class PlayerLifeManager : MonoBehaviour {
-    public TextMeshProUGUI healthText;
     public int maxHealth = 100;
     public int health;
 
+    public delegate void OnHealthChanged();
+    public OnHealthChanged onHealthChangedCallback;
+
     void Start() {
-        FillLife();
+        SetMaxHealth();
     }
 
-    public void FillLife() {
-        health = maxHealth;
-        UpdateVisual();
+    private void SetHealth(int amount){
+        health = amount;
+        if (health >= maxHealth)
+            health = maxHealth;
+        if(onHealthChangedCallback != null)
+            onHealthChangedCallback.Invoke();
+    }
+
+    public void SetMaxHealth() {
+        SetHealth(maxHealth);
     }
 
     public void Heal(int amount) {
-        health += amount;
-        if (health >= maxHealth)
-            health = maxHealth;
-        UpdateVisual();
+        int newHealth = health + amount;
+        SetHealth(newHealth);
     }
 
 
-    public void DealDamage(int damage) {
-        health -= damage;
-        UpdateVisual();
-    }
-
-    private void UpdateVisual() {
-        if(healthText)
-            healthText.text = "Health: " + health;
+    public void TakeDamage(int amount) {
+        int newHealth = health - amount;
+        SetHealth(newHealth);
     }
 }

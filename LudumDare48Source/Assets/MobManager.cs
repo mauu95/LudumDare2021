@@ -43,7 +43,7 @@ public class MobManager : MonoBehaviour {
             elapsedTime = 0;
             RemoveAggroToEveryone();
             for (int i = 0; i < enemiesCountWithAggro; i++) {
-                var randomPosition = (int)Random.value * enemies.Count;
+                var randomPosition = (int)(Random.value * enemies.Count);
                 GameObject enemyWithAggro = enemies[randomPosition];
                 enemyWithAggro.GetComponent<EnemyMovement>().AddAggro();
                 enemiesWithAggro.Add(enemyWithAggro);

@@ -10,6 +10,7 @@ public class PlayerStats : MonoBehaviour
 
     float lightRadius = 0;
     public float maxRadius = 29;
+    public float increaseRadiusStep = 1f;
 
     private float lightIntensity;
 
@@ -27,7 +28,7 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void IncreaseLightRadius(){
-        SetLightRadius(lightRadius + 5f);
+        SetLightRadius(lightRadius + increaseRadiusStep);
     }
 
     public void SwitchOffPointLight(){

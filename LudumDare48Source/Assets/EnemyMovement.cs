@@ -81,15 +81,11 @@ public class EnemyMovement : MonoBehaviour {
         if (isAggred) {
             isAggred = false;
             GoToNewTarget();
-            var sr = GetComponent<SpriteRenderer>();
-            sr.color = Color.white;
         }
     }
 
     public void AddAggro() {
         isAggred = true;
-        var sr = GetComponent<SpriteRenderer>();
-        sr.color = Color.red;
     }
 
 }

@@ -39,6 +39,7 @@ public class MobManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         elapsedTime += Time.deltaTime;
+        Debug.Log(elapsedTime + ", " + changeAggroInterval);
         if (elapsedTime >= changeAggroInterval) {
             elapsedTime = 0;
             RemoveAggroToEveryone();

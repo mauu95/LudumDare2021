@@ -50,6 +50,10 @@ public class EnemyMovement : MonoBehaviour {
         var randomPosition = Random.insideUnitCircle * 50;
         var playerPos = player.transform.position;
         var position = new Vector3(playerPos.x + randomPosition.x, playerPos.y + randomPosition.y);
+        if ((position - playerPos).magnitude < 20) {
+            var vector = (position - playerPos).normalized * 20;
+            position += vector;
+        }
         transform.position = position;
         //enemies.Add(Instantiate(enemyPrefab, position, Quaternion.identity, enemyContainer.transform));
     }

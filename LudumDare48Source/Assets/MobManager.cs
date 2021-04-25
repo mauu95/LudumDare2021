@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MobManager : MonoBehaviour {
     public int enemiesCount = 10;
-    public float maxDistance = 100;
+    public int enemiesCountWithAggro = 3;
+    public float changeAggroInterval = 10f;
     public GameObject enemyContainer;
     public GameObject enemyPrefab;
-    public GameObject player;
-
 
     private List<GameObject> enemies;
+    private List<GameObject> enemiesWithAggro;
+    private float elapsedTime = 0;
 
     public static MobManager instance;
 
@@ -20,30 +21,33 @@ public class MobManager : MonoBehaviour {
         instance = this;
 
         enemies = new List<GameObject>();
+        enemiesWithAggro = new List<GameObject>();
+
         for (int i = 0; i < enemiesCount; i++) {
-            SpawnNewEnemy();
+            enemies.Add(Instantiate(enemyPrefab, transform));
         }
     }
 
-    void SpawnNewEnemy() {
-        var randomPosition = Random.insideUnitCircle * 50;
-        var playerPos = player.transform.position;
-        var position = new Vector3(playerPos.x + randomPosition.x, playerPos.y + randomPosition.y);
-        enemies.Add(Instantiate(enemyPrefab, position, Quaternion.identity, enemyContainer.transform));
+    void RemoveAggroToEveryone() {
+        foreach (var enemy in enemiesWithAggro) {
+            enemy.GetComponent<EnemyMovement>().RemoveAggro();
+        }
+        enemiesWithAggro.Clear();
     }
 
-    public void DestroyEnemy(GameObject enemy) {
-        enemies.Remove(enemy);
-        Destroy(enemy);
-        SpawnNewEnemy();
-    }
 
     // Update is called once per frame
     void Update() {
-        foreach (GameObject g in enemies) {
-            if ((g.transform.position - player.transform.position).magnitude >= maxDistance) {
-                DestroyEnemy(g);
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime >= changeAggroInterval) {
+            elapsedTime = 0;
+            RemoveAggroToEveryone();
+            for (int i = 0; i < enemiesCountWithAggro; i++) {
+                var randomPosition = (int)Random.value * enemies.Count;
+                GameObject enemyWithAggro = enemies[randomPosition];
+                enemyWithAggro.GetComponent<EnemyMovement>().AddAggro();
+                enemiesWithAggro.Add(enemyWithAggro);
             }
-        };
+        }
     }
 }

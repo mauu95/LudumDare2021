@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardHealth : Card
 {
-    private void FixedUpdate() {
+    private void Update() {
         PlayerLifeManager player = PlayerMovement.instance.GetComponent<PlayerLifeManager>();
         if(player.health == player.maxHealth)
             button.gameObject.SetActive(false);

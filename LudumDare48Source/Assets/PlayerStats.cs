@@ -28,7 +28,6 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void IncreaseLightRadius(){
-        print(lightRadius + SerieMonotonaDecrescente(++radiusUpgradeCounter));
         SetLightRadius(lightRadius + SerieMonotonaDecrescente(++radiusUpgradeCounter));
     }
 
@@ -46,11 +45,12 @@ public class PlayerStats : MonoBehaviour
 
     private float SerieMonotonaDecrescente(int n){
         float max = 6f;
+        float min = 2f;
         float result = max - n;
-        if(result > 1)
+        if(result > min)
             return result;
         else
-            return 1;
+            return min;
     }
 
 }

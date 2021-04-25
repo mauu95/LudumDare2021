@@ -60,6 +60,8 @@ public class EnemyMovement : MonoBehaviour {
             var vector = (position - playerPos).normalized * 20;
             position += vector;
         }
+        if (position.y > 0)
+            position.y = -position.y;
         transform.position = position;
     }
 
@@ -74,6 +76,9 @@ public class EnemyMovement : MonoBehaviour {
         if (!isAggred) {
             Vector2 diff = Random.insideUnitCircle * 10;
             target = transform.position + new Vector3(diff.x, diff.y);
+            if (target.y > 0) {
+                target.y = -target.y;
+            }
         }
     }
 

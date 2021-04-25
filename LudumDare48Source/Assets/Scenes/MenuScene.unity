@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 31404698}
   - component: {fileID: 31404697}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: ScoreManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -149,12 +149,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 31404696}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d5c8cfbaa5b4b54c81174e86e8fc1c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1df361d6ac2364fa1a1c8d7dbe1aec17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lost: 0
   score: 0
-  pauseMenu: {fileID: 0}
 --- !u!4 &31404698
 Transform:
   m_ObjectHideFlags: 0
@@ -1321,7 +1320,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 31404697}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: GameStart
         m_Mode: 1

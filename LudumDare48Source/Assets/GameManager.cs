@@ -10,14 +10,12 @@ public class GameManager : MonoBehaviour {
     private void Awake() {
         if (instance != null)
             return;
-        DontDestroyOnLoad(this.gameObject);
         instance = this;
     }
     #endregion
 
     public static bool IsGamePaused;
-    public bool lost = false;
-    public int score = 0;
+
     [SerializeField] private GameObject pauseMenu;
 
     private void Update() {
@@ -41,18 +39,8 @@ public class GameManager : MonoBehaviour {
             pauseMenu.SetActive(false);
     }
 
-    public static void GameStart() {
-        SceneManager.LoadScene("MainScene");
-    }
-
-    public void GameEnd(int score) {
-        this.score = score;
-        lost = true;
-        SceneManager.LoadScene("MenuScene");
-    }
-
-    public void slowTime(bool yesno){
-        if(yesno)
+    public void slowTime(bool yesno) {
+        if (yesno)
             Time.timeScale = 0.05f;
         else
             Time.timeScale = 1f;

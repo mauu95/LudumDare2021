@@ -43,8 +43,9 @@ public class PlayerLifeManager : MonoBehaviour {
     }
 
     IEnumerator EndGame() {
-        yield return new WaitForSeconds(2);
-        GameManager.instance.GameEnd(100); // TODO: get actual score
+        Time.timeScale = 0.05f;
+        yield return new WaitForSecondsRealtime(2);
+        ScoreManager.instance.GameEnd(100); // TODO: get actual score
     }
 
 

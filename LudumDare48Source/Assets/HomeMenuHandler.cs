@@ -7,8 +7,8 @@ public class HomeMenuHandler : MonoBehaviour {
     public GameObject tryAgainLabel;
     // Start is called before the first frame update
     void Start() {
-        if (GameManager.instance.lost) {
-            score.text = "Score: " + GameManager.instance.score;
+        if (ScoreManager.instance.lost) {
+            score.text = "Score: " + ScoreManager.instance.score;
         } else {
             score.gameObject.SetActive(false);
             tryAgainLabel.SetActive(false);

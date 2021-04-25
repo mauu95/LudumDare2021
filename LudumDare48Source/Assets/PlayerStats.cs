@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     Shop shop;
 
     float lightRadius = 0;
+    public float maxRadius = 29;
 
     private float lightIntensity;
 
@@ -35,6 +36,10 @@ public class PlayerStats : MonoBehaviour
 
     public void SwitchOnPointLight(){
         pointLight.intensity = lightIntensity;
+    }
+
+    public bool IsRadiusMaxxedOut(){
+        return lightRadius > maxRadius;
     }
 
 }

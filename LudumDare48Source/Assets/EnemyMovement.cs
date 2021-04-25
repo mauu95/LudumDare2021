@@ -82,7 +82,7 @@ public class EnemyMovement : MonoBehaviour {
         }
     }
 
-    public void Bump(Vector3 velocity) {
+    public virtual void Bump(Vector3 velocity) {
         rb.velocity = 3 * velocity;
     }
 

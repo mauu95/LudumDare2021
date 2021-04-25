@@ -29,6 +29,10 @@ public class AggressiveEnemyMovement : EnemyMovement {
         }
     }
 
+    public override void Bump(Vector3 velocity) {
+        rb.velocity = 5 * velocity;
+    }
+
 
     private void Flip() {
         // Switch the way the player is labelled as facing.

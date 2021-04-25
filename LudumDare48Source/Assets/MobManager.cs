@@ -7,7 +7,8 @@ public class MobManager : MonoBehaviour {
     public int enemiesCountWithAggro = 3;
     public float changeAggroInterval = 10f;
     public GameObject enemyContainer;
-    public GameObject enemyPrefab;
+    public GameObject swordFishPrefab;
+    public GameObject sharkPrefab;
 
     private List<GameObject> enemies;
     private List<GameObject> enemiesWithAggro;
@@ -23,7 +24,7 @@ public class MobManager : MonoBehaviour {
         enemiesWithAggro = new List<GameObject>();
 
         for (int i = 0; i < enemiesCount; i++) {
-            enemies.Add(Instantiate(enemyPrefab, transform));
+            enemies.Add(Instantiate(swordFishPrefab, transform));
         }
     }
 
@@ -37,6 +38,12 @@ public class MobManager : MonoBehaviour {
     public void AddAggroTo(GameObject enemy) {
         enemiesWithAggro.Add(enemy);
         enemy.GetComponent<EnemyMovement>().AddAggro();
+    }
+
+    public void AddSharks() {
+        for (int i = 0; i < enemiesCount; i++) {
+            enemies.Add(Instantiate(sharkPrefab, transform));
+        }
     }
 
     void Update() {

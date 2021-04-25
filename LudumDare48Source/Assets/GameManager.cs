@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour {
 
     public void slowTime(bool yesno){
         if(yesno)
-            Time.timeScale = 0.1f;
+            Time.timeScale = 0.05f;
         else
             Time.timeScale = 1f;
     }

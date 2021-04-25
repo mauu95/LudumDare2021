@@ -16,15 +16,20 @@ public class Shop : MonoBehaviour
 
     public void OpenShop(){
         shopUI.SetActive(true);
+        shopUI.GetComponent<ShopUI>().EnableAllCards();
     }
 
-    public void HealPlayer(){
+    public void purchaseHeal(){
         player.GetComponent<PlayerLifeManager>().FillLife();
         spendMoney(price);
     }
 
-    public void IncreaseLightRadius(){
+    public void purchaseLight(){
         player.GetComponent<PlayerStats>().IncreaseLightRadius();
+        spendMoney(price);
+    }
+
+    public void purchaseEnergy(){
         spendMoney(price);
     }
 

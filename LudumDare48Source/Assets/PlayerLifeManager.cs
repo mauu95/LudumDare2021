@@ -50,7 +50,8 @@ public class PlayerLifeManager : MonoBehaviour {
         Time.timeScale = 0.05f;
         yield return new WaitForSecondsRealtime(2);
         int maxScore = GetComponent<PlayerScoreManager>().GetMaxScore();
-        ScoreManager.instance.GameEnd(maxScore);
+        if (ScoreManager.instance)
+            ScoreManager.instance.GameEnd(maxScore);
     }
 
 

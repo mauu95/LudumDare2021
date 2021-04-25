@@ -8,29 +8,25 @@ public class EnemyMovement : MonoBehaviour {
     public float maxDistanceFromPlayer = 100;
 
 
-    private Rigidbody2D rb;
-    private Vector3 target;
-    private GameObject player;
-    private bool isAggred = false;
+    protected Rigidbody2D rb;
+    protected Vector3 target;
+    protected GameObject player;
+    protected bool isAggred = false;
 
     // Start is called before the first frame update
-    void Start() {
+    public virtual void Start() {
         rb = GetComponent<Rigidbody2D>();
         player = PlayerMovement.instance.gameObject;
         Reset();
     }
 
     // Update is called once per frame
-    void Update() {
+    public virtual void Update() {
         var targetPosition = GetTagetPosition();
         var direction = (targetPosition - transform.position).normalized;
         transform.position = transform.position + direction * Time.deltaTime * speed;
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        float currentAngle = transform.rotation.eulerAngles.z;
-        float theAngle = Mathf.LerpAngle(currentAngle, angle, Time.deltaTime * rotatioSpeed);
-
-        transform.rotation = Quaternion.AngleAxis(theAngle, Vector3.forward);
+        ComputeRotation(direction);
 
         if (!isAggred && (target - transform.position).magnitude < 0.5) {
             GoToNewTarget();
@@ -38,6 +34,14 @@ public class EnemyMovement : MonoBehaviour {
         if ((transform.position - player.transform.position).magnitude >= maxDistanceFromPlayer) {
             Reset();
         }
+    }
+
+    protected void ComputeRotation(Vector3 direction) {
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float currentAngle = transform.rotation.eulerAngles.z;
+        float theAngle = Mathf.LerpAngle(currentAngle, angle, Time.deltaTime * rotatioSpeed);
+
+        transform.rotation = Quaternion.AngleAxis(theAngle, Vector3.forward);
     }
 
     public void Die() {
@@ -52,7 +56,7 @@ public class EnemyMovement : MonoBehaviour {
         GoToNewTarget();
     }
 
-    void SelfPositionAroundPlayer() {
+    protected void SelfPositionAroundPlayer() {
         var randomPosition = Random.insideUnitCircle * 50;
         var playerPos = player.transform.position;
         var position = new Vector3(playerPos.x + randomPosition.x, playerPos.y + randomPosition.y);
@@ -63,14 +67,14 @@ public class EnemyMovement : MonoBehaviour {
         transform.position = position;
     }
 
-    Vector3 GetTagetPosition() {
+    protected Vector3 GetTagetPosition() {
         if (isAggred) {
             return player.transform.position;
         }
         return target;
     }
 
-    void GoToNewTarget() {
+    protected void GoToNewTarget() {
         if (!isAggred) {
             Vector2 diff = Random.insideUnitCircle * 10;
             target = transform.position + new Vector3(diff.x, diff.y);

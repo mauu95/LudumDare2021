@@ -384,6 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creatures:
   - {fileID: 4015571233039618994, guid: 6d1d903b6eb2946089f1cc3762a04d55, type: 3}
+  - {fileID: 8291921897706823714, guid: aee79b37271a04dddb1aaba19070987b, type: 3}
   creaturesCount: 10
 --- !u!1001 &4840211796296312059
 PrefabInstance:
@@ -392,6 +393,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1741222935, guid: 0a94ba72b2de78145a4dde0b10d01735, type: 3}
+      propertyPath: m_SortingOrder
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 4840211795276256709, guid: 0a94ba72b2de78145a4dde0b10d01735,
         type: 3}
       propertyPath: m_RootOrder

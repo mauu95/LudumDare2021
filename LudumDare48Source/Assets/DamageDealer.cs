@@ -7,6 +7,7 @@ public class DamageDealer : MonoBehaviour {
     public int damage = 50;
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.CompareTag("Background"))return;
         // look for spikes
         DamageDealer otherDamageDealer = null;
         foreach (var c in collision.contacts) {

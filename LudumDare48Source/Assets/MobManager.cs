@@ -34,6 +34,10 @@ public class MobManager : MonoBehaviour {
         enemiesWithAggro.Clear();
     }
 
+    public void AddAggroTo(GameObject enemy) {
+        enemiesWithAggro.Add(enemy);
+        enemy.GetComponent<EnemyMovement>().AddAggro();
+    }
 
     void Update() {
         elapsedTime += Time.deltaTime;

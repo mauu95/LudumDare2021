@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
     public float speed;
+    public float rotatioSpeed = 1f;
     public float maxDistanceFromPlayer = 100;
 
 
@@ -26,7 +27,10 @@ public class EnemyMovement : MonoBehaviour {
         transform.position = transform.position + direction * Time.deltaTime * speed;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        float currentAngle = transform.rotation.eulerAngles.z;
+        float theAngle = Mathf.LerpAngle(currentAngle, angle, Time.deltaTime * rotatioSpeed);
+
+        transform.rotation = Quaternion.AngleAxis(theAngle, Vector3.forward);
 
         if (!isAggred && (target - transform.position).magnitude < 0.5) {
             GoToNewTarget();

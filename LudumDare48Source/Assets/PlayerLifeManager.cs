@@ -15,11 +15,11 @@ public class PlayerLifeManager : MonoBehaviour {
         SetMaxHealth();
     }
 
-    private void SetHealth(int amount){
+    private void SetHealth(int amount) {
         health = amount;
         if (health >= maxHealth)
             health = maxHealth;
-        if(onHealthChangedCallback != null)
+        if (onHealthChangedCallback != null)
             onHealthChangedCallback.Invoke();
     }
 
@@ -34,7 +34,18 @@ public class PlayerLifeManager : MonoBehaviour {
 
 
     public void TakeDamage(int amount) {
+        if (health <= 0) return; // you already died
         int newHealth = health - amount;
         SetHealth(newHealth);
+        if (health <= 0) {
+            StartCoroutine(EndGame());
+        }
     }
+
+    IEnumerator EndGame() {
+        yield return new WaitForSeconds(2);
+        GameManager.instance.GameEnd(100); // TODO: get actual score
+    }
+
+
 }

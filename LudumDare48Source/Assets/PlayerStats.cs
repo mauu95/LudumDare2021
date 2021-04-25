@@ -8,9 +8,9 @@ public class PlayerStats : MonoBehaviour
     Light2D pointLight;
     Shop shop;
 
-    float lightRadius = 0;
-    public float maxRadius = 29;
-    public float increaseRadiusStep = 1f;
+    public float lightRadius = 0;
+    public float maxRadius = 30;
+    private int radiusUpgradeCounter;
 
     private float lightIntensity;
 
@@ -28,7 +28,8 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void IncreaseLightRadius(){
-        SetLightRadius(lightRadius + increaseRadiusStep);
+        print(lightRadius + SerieMonotonaDecrescente(++radiusUpgradeCounter));
+        SetLightRadius(lightRadius + SerieMonotonaDecrescente(++radiusUpgradeCounter));
     }
 
     public void SwitchOffPointLight(){
@@ -41,6 +42,15 @@ public class PlayerStats : MonoBehaviour
 
     public bool IsRadiusMaxxedOut(){
         return lightRadius > maxRadius;
+    }
+
+    private float SerieMonotonaDecrescente(int n){
+        float max = 6f;
+        float result = max - n;
+        if(result > 1)
+            return result;
+        else
+            return 1;
     }
 
 }

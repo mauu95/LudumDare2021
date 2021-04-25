@@ -37,4 +37,10 @@ public class AggressiveEnemyMovement : EnemyMovement {
         transform.Rotate(0f, 180f, 0f);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.gameObject.tag == "Player" && !base.isAggred) {
+            MobManager.instance.AddAggroTo(gameObject);
+        }
+    }
+
 }

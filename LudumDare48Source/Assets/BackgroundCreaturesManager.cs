@@ -11,7 +11,7 @@ public class BackgroundCreaturesManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         for (int i = 0; i < creaturesCount; i++) {
-            int randPosition = (int)Random.value * creatures.Length;
+            int randPosition = (int)(Random.value * creatures.Length);
             GameObject spawned = Instantiate(creatures[randPosition], transform);
             spawnedCreature.Add(spawned);
         }

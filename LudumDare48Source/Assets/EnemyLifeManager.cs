@@ -20,6 +20,7 @@ public class EnemyLifeManager : MonoBehaviour {
 
     public void DealDamage(float damage) {
         currentLife -= damage;
+        MobManager.instance.AddAggroTo(gameObject);
         if (currentLife <= 0) {
             Instantiate(deadFishPrefab, transform.position, transform.rotation, transform.parent);
             this.gameObject.GetComponent<EnemyMovement>().Die();

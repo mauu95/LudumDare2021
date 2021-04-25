@@ -43,6 +43,8 @@ public class Healthbar : MonoBehaviour {
     public Color mediumHealthColor = new Color(0.9450285f, 1f, 0.4481132f);
     public Color lowHealthColor = new Color(1f, 0.259434f, 0.259434f);
 
+    public float targetHealth;
+
     private void Start()
     {
         // If the healthbar hasn't already been assigned, then automatically assign it.
@@ -76,12 +78,14 @@ public class Healthbar : MonoBehaviour {
             health = maximumHealth;
         }
 
-        // If the character's health is not full and the health regeneration button is ticked, regenerate health/sec at the rate of 'healthPerSecond':
-        if (health < maximumHealth && regenerateHealth)
+        if (health < targetHealth)
         {
             health += healthPerSecond * Time.deltaTime;
-
-            // Each time the health is changed, update it visibly:
+            UpdateHealth();
+        }
+        if (health > targetHealth)
+        {
+            health -= healthPerSecond * Time.deltaTime;
             UpdateHealth();
         }
     }
@@ -110,15 +114,13 @@ public class Healthbar : MonoBehaviour {
 
     public void GainHealth(float amount)
     {
-        // Add 'amount' hitpoints, then update the characters health:
-        health += amount;
+        targetHealth += amount;
         UpdateHealth();
     }
 
     public void TakeDamage(float amount)
     {
-        // Remove 'amount' hitpoints, then update the characters health:
-        health -= float.Parse(amount.ToString());
+        targetHealth -= float.Parse(amount.ToString());
         UpdateHealth();
     }
 
@@ -134,7 +136,7 @@ public class Healthbar : MonoBehaviour {
 
     public void SetHealth(float value)
     {
-        health = value;
+        targetHealth = value;
         UpdateHealth();
     }
 }

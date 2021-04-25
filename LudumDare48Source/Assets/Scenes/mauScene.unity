@@ -130,6 +130,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114359962316015350, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359962316015350, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: targetHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359962316015350, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: lowHealthColor.b
+      value: 0.44705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359962316015350, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: lowHealthColor.r
+      value: 0.44705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359962316015350, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: highHealthColor.b
+      value: 0.44705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359962316015350, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: highHealthColor.r
+      value: 0.44705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359962316015350, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: mediumHealthColor.b
+      value: 0.44705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359962316015350, guid: 54174a2c674572e44b18ff5222794266,
+        type: 3}
+      propertyPath: mediumHealthColor.r
+      value: 0.44705883
+      objectReference: {fileID: 0}
     - target: {fileID: 224383896641145578, guid: 54174a2c674572e44b18ff5222794266,
         type: 3}
       propertyPath: m_AnchorMax.x

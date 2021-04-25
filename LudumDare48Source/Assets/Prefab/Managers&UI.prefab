@@ -124,19 +124,6 @@ MonoBehaviour:
   enemyContainer: {fileID: 881455675}
   enemyPrefab: {fileID: 8403832775849047529, guid: 58b9375c068e442818000a51bb0a7aa6,
     type: 3}
---- !u!114 &1950793301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1564375970538058}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a99fab8513bf844d9e850c4e69ebc4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bar: {fileID: 114359962316015350}
 --- !u!1 &1963008822
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +282,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1719fc4961fdc684fadb77e4925497cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1950793301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564375970538058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a99fab8513bf844d9e850c4e69ebc4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 114359962316015350}
 --- !u!1 &129473569207192681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,8 +1881,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
+      propertyPath: targetHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
+        type: 3}
+      propertyPath: healthPerSecond
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
+        type: 3}
       propertyPath: lowHealthColor.b
-      value: 0
+      value: 0.44705883
       objectReference: {fileID: 0}
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
@@ -1892,7 +1902,7 @@ PrefabInstance:
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
       propertyPath: lowHealthColor.r
-      value: 0
+      value: 0.44705883
       objectReference: {fileID: 0}
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
@@ -1902,7 +1912,7 @@ PrefabInstance:
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
       propertyPath: highHealthColor.b
-      value: 0
+      value: 0.44705883
       objectReference: {fileID: 0}
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
@@ -1912,12 +1922,12 @@ PrefabInstance:
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
       propertyPath: highHealthColor.r
-      value: 0
+      value: 0.44705883
       objectReference: {fileID: 0}
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
       propertyPath: mediumHealthColor.b
-      value: 0
+      value: 0.44705883
       objectReference: {fileID: 0}
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
@@ -1927,7 +1937,7 @@ PrefabInstance:
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
       propertyPath: mediumHealthColor.r
-      value: 0
+      value: 0.44705883
       objectReference: {fileID: 0}
     - target: {fileID: 224383897800939226, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}

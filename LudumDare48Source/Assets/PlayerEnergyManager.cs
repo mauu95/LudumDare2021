@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerEnergyManager : MonoBehaviour
 {
-    PlayerStats playerLight;
+    PlayerLightManager playerLight;
     PlayerLifeManager playerHealth;
 
     [Range(0,100)]
@@ -16,7 +16,7 @@ public class PlayerEnergyManager : MonoBehaviour
     public OnEnergyChanged onEnergyChangedCallback;
 
     void Start() {
-        playerLight = GetComponent<PlayerStats>();
+        playerLight = GetComponent<PlayerLightManager>();
         playerHealth = GetComponent<PlayerLifeManager>();
         InvokeRepeating("ConsumeEnergy", 2f, 1f);
         InvokeRepeating("ConsumeHealth", 2f, 1f);

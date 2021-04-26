@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerLightManager : MonoBehaviour
 {
     Light2D pointLight;
     Shop shop;
@@ -28,7 +28,8 @@ public class PlayerStats : MonoBehaviour
     }
 
     public void IncreaseLightRadius(){
-        SetLightRadius(lightRadius + SerieMonotonaDecrescente(++radiusUpgradeCounter));
+        SetLightRadius(lightRadius + SerieMonotonaDecrescente(radiusUpgradeCounter++));
+        shop.UpdatePrice(radiusUpgradeCounter);
     }
 
     public void SwitchOffPointLight(){
@@ -44,13 +45,12 @@ public class PlayerStats : MonoBehaviour
     }
 
     private float SerieMonotonaDecrescente(int n){
-        float max = 6f;
-        float min = 2f;
-        float result = max - n;
-        if(result > min)
-            return result;
+        if (n < 1)
+            return 4;
+        else if (n < 3)
+            return 2;
         else
-            return min;
+            return 1;
     }
 
 }

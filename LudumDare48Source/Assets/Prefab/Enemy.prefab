@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f429522933ca8c14380ad07c3626f3d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyDrop: 50
+  moneyDrop: 10
 --- !u!1001 &8403832776222232648
 PrefabInstance:
   m_ObjectHideFlags: 0

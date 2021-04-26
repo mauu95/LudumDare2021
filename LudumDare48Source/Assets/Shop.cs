@@ -28,24 +28,25 @@ public class Shop : MonoBehaviour
 
     public void purchaseHeal(){
         player.GetComponent<PlayerLifeManager>().SetMaxHealth();
-        spendMoney(price);
         AudioManager.instance.Play("GainHealth");
+        ResetMoney();
     }
 
     public void purchaseLight(){
-        player.GetComponent<PlayerStats>().IncreaseLightRadius();
-        spendMoney(price);
+        player.GetComponent<PlayerLightManager>().IncreaseLightRadius();
         AudioManager.instance.Play("GainLight");
+        ResetMoney();
     }
 
     public void purchaseEnergy(){
         player.GetComponent<PlayerEnergyManager>().FillEnergy();
-        spendMoney(price);
         AudioManager.instance.Play("GainEnergy");
+        ResetMoney();
     }
 
-    public void addMoney(){
-        addMoney(1);
+    public void ResetMoney()
+    {
+        money = 0;
     }
 
     public void addMoney(int amount){
@@ -56,12 +57,13 @@ public class Shop : MonoBehaviour
         }
     }
 
-    public void spendMoney(int amount){
-        if(money - amount >= 0)
-            money -= amount;
+    public void SetPrice(int amount)
+    {
+        price = amount;
     }
 
-    public void spendMoney(){
-        spendMoney(price);
+    public void UpdatePrice(int difficulty)
+    {
+        SetPrice(difficulty * 20);
     }
 }

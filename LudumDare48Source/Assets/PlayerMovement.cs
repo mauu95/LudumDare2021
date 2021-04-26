@@ -19,6 +19,13 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update() {
+        if(transform.position.y>0){
+            rb.gravityScale = 1;
+            return;
+        }
+        else
+            rb.gravityScale = 0;
+
         if (Input.GetMouseButton(0)) {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = Camera.main.nearClipPlane;

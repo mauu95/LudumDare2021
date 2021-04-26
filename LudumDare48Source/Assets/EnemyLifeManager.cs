@@ -7,7 +7,6 @@ public class EnemyLifeManager : MonoBehaviour {
     public GameObject deadFishPrefab;
     protected float currentLife;
 
-    // Start is called before the first frame update
     void Start() {
         FillLife();
     }
@@ -16,14 +15,12 @@ public class EnemyLifeManager : MonoBehaviour {
         currentLife = maxLife;
     }
 
-
-
-    public void DealDamage(float damage) {
+    public void TakeDamage(float damage) {
         currentLife -= damage;
         MobManager.instance.AddAggroTo(gameObject);
         if (currentLife <= 0) {
+            GetComponent<Enemy>().Die();
             Instantiate(deadFishPrefab, transform.position, transform.rotation, transform.parent);
-            this.gameObject.GetComponent<EnemyMovement>().Die();
             FillLife();
         } else {
             AudioManager.instance.Play("Hit");

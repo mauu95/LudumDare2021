@@ -116,6 +116,7 @@ GameObject:
   - component: {fileID: 8403832775849047526}
   - component: {fileID: 8403832775849047522}
   - component: {fileID: 8936704247310587721}
+  - component: {fileID: 8554484783200331991}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -236,6 +237,19 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &8554484783200331991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8403832775849047529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f429522933ca8c14380ad07c3626f3d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyDrop: 50
 --- !u!1001 &8403832776222232648
 PrefabInstance:
   m_ObjectHideFlags: 0

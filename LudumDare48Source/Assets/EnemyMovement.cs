@@ -13,14 +13,12 @@ public class EnemyMovement : MonoBehaviour {
     protected GameObject player;
     protected bool isAggred = false;
 
-    // Start is called before the first frame update
     public virtual void Start() {
         rb = GetComponent<Rigidbody2D>();
         player = PlayerMovement.instance.gameObject;
-        Reset();
+        ResetPosition();
     }
 
-    // Update is called once per frame
     public virtual void Update() {
         var targetPosition = GetTagetPosition();
         var direction = (targetPosition - transform.position).normalized;
@@ -36,17 +34,11 @@ public class EnemyMovement : MonoBehaviour {
             GoToNewTarget();
         }
         if ((transform.position - player.transform.position).magnitude >= maxDistanceFromPlayer) {
-            Reset();
+            ResetPosition();
         }
     }
 
-    public void Die() {
-        // TODO: spawn meat or stuff for the player to eat
-        FindObjectOfType<Shop>().addMoney();
-        Reset();
-    }
-
-    public void Reset() {
+    public void ResetPosition() {
         rb.velocity = Vector3.zero;
         SelfPositionAroundPlayer();
         GoToNewTarget();

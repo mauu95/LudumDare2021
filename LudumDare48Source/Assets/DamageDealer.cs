@@ -26,7 +26,7 @@ public class DamageDealer : MonoBehaviour {
         bool otherIsPlayer = collision.gameObject.tag == "Player";
         if (isPlayer) {
             var lifeManager = collision.gameObject.GetComponent<EnemyLifeManager>();
-            lifeManager.DealDamage(damage);
+            lifeManager.TakeDamage(damage);
             var rb = this.gameObject.GetComponentInParent<Rigidbody2D>();
             var controller = collision.gameObject.GetComponent<EnemyMovement>();
             controller.Bump(rb.velocity);

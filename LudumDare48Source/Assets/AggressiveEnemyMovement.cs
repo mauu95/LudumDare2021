@@ -25,7 +25,7 @@ public class AggressiveEnemyMovement : EnemyMovement {
 
         // check if it got too far from player
         if ((transform.position - player.transform.position).magnitude >= maxDistanceFromPlayer) {
-            Reset();
+            ResetPosition();
         }
     }
 

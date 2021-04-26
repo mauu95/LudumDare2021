@@ -6,12 +6,10 @@ public class EnemyLifeManager : MonoBehaviour {
     public float maxLife = 100;
     public GameObject deadFishPrefab;
     protected float currentLife;
-    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start() {
         FillLife();
-        audioSource = GetComponent<AudioSource>();
     }
 
     public void FillLife() {
@@ -28,7 +26,7 @@ public class EnemyLifeManager : MonoBehaviour {
             this.gameObject.GetComponent<EnemyMovement>().Die();
             FillLife();
         } else {
-            audioSource.Play();
+            AudioManager.instance.Play("Hit");
         }
     }
 

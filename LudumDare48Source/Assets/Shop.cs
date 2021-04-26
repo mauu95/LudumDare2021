@@ -18,6 +18,7 @@ public class Shop : MonoBehaviour
         shopUI.SetActive(true);
         shopUI.GetComponent<ShopUI>().EnableAllCards();
         GameManager.instance.slowTime(true);
+        AudioManager.instance.Play("OpenShop");
     }
 
     public void CloseShop(){

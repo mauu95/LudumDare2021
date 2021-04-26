@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             if (IsGamePaused) ResumeGame();
             else PauseGame();
+            if (AudioManager.instance)
+                AudioManager.instance.Play("Pause");
         }
     }
 

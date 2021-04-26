@@ -5,7 +5,9 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class PlayerLightManager : MonoBehaviour
 {
-    Light2D pointLight;
+    public Light2D mainLight;
+    public Light2D secondaryLight;
+
     Shop shop;
     PlayerEnergyManager energyManager;
 
@@ -16,16 +18,15 @@ public class PlayerLightManager : MonoBehaviour
     private float lightIntensity;
 
     private void Start() {
-        pointLight = GetComponentInChildren<Light2D>();
         energyManager = GetComponent<PlayerEnergyManager>();
         shop = FindObjectOfType<Shop>();
         SetLightRadius(lightRadius);
-        lightIntensity = pointLight.intensity;
+        lightIntensity = mainLight.intensity;
     }
 
     public void SetLightRadius(float amount){
-        pointLight.pointLightOuterRadius = amount;
-        pointLight.pointLightInnerRadius = amount/2;
+        mainLight.pointLightOuterRadius = amount;
+        mainLight.pointLightInnerRadius = amount/2;
         lightRadius = amount;
     }
 
@@ -36,11 +37,13 @@ public class PlayerLightManager : MonoBehaviour
     }
 
     public void SwitchOffPointLight(){
-        pointLight.intensity = 0;
+        mainLight.intensity = 0;
+        secondaryLight.intensity = lightIntensity;
     }
 
     public void SwitchOnPointLight(){
-        pointLight.intensity = lightIntensity;
+        mainLight.intensity = lightIntensity;
+        secondaryLight.intensity = 0;
     }
 
     public bool IsRadiusMaxxedOut(){

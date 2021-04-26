@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 80, y: 80, z: 1}
   m_Children: []
   m_Father: {fileID: 4840211795276256709}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &277919130
 SpriteRenderer:
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1194827893}
   - component: {fileID: 1194827894}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: MainLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -139,11 +139,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194827892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.19738436, y: 0.29752445, z: 0.079637334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4840211795276256709}
-  m_RootOrder: 3
+  m_Father: {fileID: 5359205453332373832}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1194827894
 MonoBehaviour:
@@ -215,7 +215,7 @@ Transform:
   m_LocalScale: {x: 80, y: 80, z: 1}
   m_Children: []
   m_Father: {fileID: 4840211795276256709}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1741222935
 SpriteRenderer:
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 2038908866}
   - component: {fileID: 2038908867}
   m_Layer: 0
-  m_Name: Point Light 2D
+  m_Name: SecondaryLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,12 +293,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038908865}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.19738436, y: 0.29752445, z: 0.079637334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4840211795276256709}
-  m_RootOrder: 6
+  m_Father: {fileID: 5359205453332373832}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2038908867
 MonoBehaviour:
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_LightVolumeOpacity: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -423,6 +423,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3047332641613395059
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5359205453332373832}
+  m_Layer: 0
+  m_Name: Lights
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5359205453332373832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047332641613395059}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.19738436, y: -0.29752445, z: -0.079637334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1194827893}
+  - {fileID: 2038908866}
+  m_Father: {fileID: 4840211795276256709}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3392352689004337308
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,10 +597,9 @@ Transform:
   - {fileID: 4840211796132982542}
   - {fileID: 5263080228378386118}
   - {fileID: 1139650022}
-  - {fileID: 1194827893}
   - {fileID: 277919131}
   - {fileID: 1741222934}
-  - {fileID: 2038908866}
+  - {fileID: 5359205453332373832}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -618,8 +649,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc075ef56431ce349a01e1f16debc35c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainLight: {fileID: 1194827894}
+  secondaryLight: {fileID: 2038908867}
   lightRadius: 0
   maxRadius: 20
+  radiusUpgradeCounter: 0
 --- !u!58 &4840211796296312061
 CircleCollider2D:
   m_ObjectHideFlags: 0

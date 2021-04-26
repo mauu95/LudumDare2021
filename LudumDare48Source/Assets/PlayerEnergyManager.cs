@@ -10,6 +10,7 @@ public class PlayerEnergyManager : MonoBehaviour
     [Range(0,100)]
     public int energy;
 
+    public int maxDecay = 4;
     public int decay;
 
     public delegate void OnEnergyChanged();
@@ -48,6 +49,9 @@ public class PlayerEnergyManager : MonoBehaviour
     public void UpdateDecay(int difficulty)
     {
         decay = difficulty;
+        if (decay > maxDecay)
+            decay = maxDecay;
+
     }
 
 

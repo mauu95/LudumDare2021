@@ -42,7 +42,12 @@ public class PlayerEnergyManager : MonoBehaviour
 
     private void ConsumeHealth(){
         if(energy>0)return;
-        playerHealth.TakeDamage(decay);
+        playerHealth.TakeDamage(1);
+    }
+
+    public void UpdateDecay(int difficulty)
+    {
+        decay = difficulty;
     }
 
 

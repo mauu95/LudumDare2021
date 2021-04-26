@@ -7,15 +7,17 @@ public class PlayerLightManager : MonoBehaviour
 {
     Light2D pointLight;
     Shop shop;
+    PlayerEnergyManager energyManager;
 
     public float lightRadius = 0;
     public float maxRadius = 30;
-    private int radiusUpgradeCounter;
+    public int radiusUpgradeCounter;
 
     private float lightIntensity;
 
     private void Start() {
         pointLight = GetComponentInChildren<Light2D>();
+        energyManager = GetComponent<PlayerEnergyManager>();
         shop = FindObjectOfType<Shop>();
         SetLightRadius(lightRadius);
         lightIntensity = pointLight.intensity;
@@ -30,6 +32,7 @@ public class PlayerLightManager : MonoBehaviour
     public void IncreaseLightRadius(){
         SetLightRadius(lightRadius + SerieMonotonaDecrescente(radiusUpgradeCounter++));
         shop.UpdatePrice(radiusUpgradeCounter);
+        energyManager.UpdateDecay(radiusUpgradeCounter);
     }
 
     public void SwitchOffPointLight(){

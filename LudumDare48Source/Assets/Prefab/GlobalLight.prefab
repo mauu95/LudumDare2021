@@ -85,6 +85,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c052bbb8cd324949948e05535e94b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nzone: 10
-  zonesize: 5
+  bottomDepth: 10
   mininum: 0.02

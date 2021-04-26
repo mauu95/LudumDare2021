@@ -300,7 +300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!82 &567517926
 AudioSource:
   m_ObjectHideFlags: 0
@@ -750,6 +750,37 @@ MonoBehaviour:
   toFollow: {fileID: 1157460286}
   horizontalOffSet: 0
   verticalOffSet: 0
+--- !u!1 &1911864075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7308472028089147368, guid: 54174a2c674572e44b18ff5222794266,
+    type: 3}
+  m_PrefabInstance: {fileID: 8166125483019517298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1911864079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911864075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3787851b1e3eef42b747d690449ab59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: GainEnergy
+    clip: {fileID: 8300000, guid: 487ec9fe72f214d4cb677a7594a083a1, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Theme
+    clip: {fileID: 8300000, guid: 9d386278b054d463892d5dae63693487, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
 --- !u!1 &2005591151
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,37 +917,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 361169486, guid: 54174a2c674572e44b18ff5222794266, type: 3}
-      propertyPath: bottomDepth
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 881455676, guid: 54174a2c674572e44b18ff5222794266, type: 3}
-      propertyPath: enemyPrefab
-      value: 
-      objectReference: {fileID: 4375336464664174130, guid: 260269c26e7d24f2a8a4fb11b7bc7651,
-        type: 3}
-    - target: {fileID: 881455676, guid: 54174a2c674572e44b18ff5222794266, type: 3}
-      propertyPath: sharkPrefab
-      value: 
-      objectReference: {fileID: 4375336464664174130, guid: 260269c26e7d24f2a8a4fb11b7bc7651,
-        type: 3}
-    - target: {fileID: 881455676, guid: 54174a2c674572e44b18ff5222794266, type: 3}
-      propertyPath: swordFishPrefab
-      value: 
-      objectReference: {fileID: 8403832775849047529, guid: 58b9375c068e442818000a51bb0a7aa6,
-        type: 3}
-    - target: {fileID: 1987620888, guid: 54174a2c674572e44b18ff5222794266, type: 3}
-      propertyPath: m_Name
-      value: MaxDepthScore
-      objectReference: {fileID: 0}
-    - target: {fileID: 1987620889, guid: 54174a2c674572e44b18ff5222794266, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1987620890, guid: 54174a2c674572e44b18ff5222794266, type: 3}
-      propertyPath: m_text
-      value: 'Max depth: 0'
-      objectReference: {fileID: 0}
     - target: {fileID: 1740371257207089994, guid: 54174a2c674572e44b18ff5222794266,
         type: 3}
       propertyPath: m_AnchorMax.x

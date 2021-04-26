@@ -28,16 +28,19 @@ public class Shop : MonoBehaviour
     public void purchaseHeal(){
         player.GetComponent<PlayerLifeManager>().SetMaxHealth();
         spendMoney(price);
+        AudioManager.instance.Play("GainHealth");
     }
 
     public void purchaseLight(){
         player.GetComponent<PlayerStats>().IncreaseLightRadius();
         spendMoney(price);
+        AudioManager.instance.Play("GainLight");
     }
 
     public void purchaseEnergy(){
         player.GetComponent<PlayerEnergyManager>().FillEnergy();
         spendMoney(price);
+        AudioManager.instance.Play("GainEnergy");
     }
 
     public void addMoney(){

@@ -4,5 +4,20 @@ using UnityEngine;
 
 public class GFXFlipper : MonoBehaviour
 {
-    
+    public Rigidbody2D rigBody;
+    private bool m_FacingRight = true;
+
+    private void Update() {
+        float move = rigBody.velocity.x;
+        if (move > 0 && !m_FacingRight)
+            Flip();
+        else if (move < 0 && m_FacingRight)
+            Flip();
+    }
+
+    private void Flip()
+    {
+        m_FacingRight = !m_FacingRight;
+        transform.Rotate(180f, 0f, 0f);
+    }
 }

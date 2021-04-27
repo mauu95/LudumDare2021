@@ -43,7 +43,7 @@ public class AggressiveEnemyMovement : EnemyMovement {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player" && !base.isAggred) {
-            MobManager.instance.AddAggroTo(gameObject);
+            //MobManager.instance.AddAggroTo(gameObject);
         }
     }
 

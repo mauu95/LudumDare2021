@@ -12,7 +12,7 @@ public class PlayerScoreManager : MonoBehaviour {
     void Update() {
         float max = Mathf.Max(-transform.position.y, maxScore);
         if (max >= 200 && maxScore < 200) {
-            MobManager.instance.AddSharks();
+            //MobManager.instance.AddSharks();
         }
         maxScore = (int)max;
         scoreText.text = "Max depth: " + maxScore;

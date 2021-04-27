@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public static Shop instance;
+    private void Awake()
+    {
+        if (instance != null)
+            return;
+
+        instance = this;
+    }
+    
     public GameObject shopUI;
     public int money;
     public int price;

@@ -5,17 +5,21 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public int moneyDrop;
+    public int health;
+    public GameObject deadFishPrefab;
 
-    private EnemyMovement posManager;
-
-    private void Start()
-    {
-        posManager = GetComponent<EnemyMovement>();
+    public void TakeDamage(int damage) {
+        health -= damage;
+        if (health <= 0) {
+            Die();
+        }
+        else 
+            AudioManager.instance.Play("Hit");
     }
 
     public void Die()
     {
-        posManager.ResetPosition();
-        FindObjectOfType<Shop>().addMoney(moneyDrop);
+        Instantiate(deadFishPrefab, transform.position, transform.rotation, transform.parent);
+        Shop.instance.addMoney(moneyDrop);
     }
 }

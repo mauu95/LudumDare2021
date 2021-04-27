@@ -5,7 +5,7 @@ using UnityEngine;
 public class CardLight : Card
 {
     private void Update() {
-        PlayerLightManager player = PlayerMovement.instance.GetComponent<PlayerLightManager>();
+        PlayerLightManager player = Player.instance.GetComponent<PlayerLightManager>();
         if(player.IsRadiusMaxxedOut())
             button.gameObject.SetActive(false);
     }

@@ -8,7 +8,7 @@ public class EnergyUI : MonoBehaviour
     public Healthbar bar;
 
     private void Start() {
-        player = PlayerMovement.instance.GetComponent<PlayerEnergyManager>();
+        player = Player.instance.GetComponent<PlayerEnergyManager>();
         player.onEnergyChangedCallback += UpdateUI;
     }
 

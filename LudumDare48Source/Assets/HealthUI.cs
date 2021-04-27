@@ -8,7 +8,7 @@ public class HealthUI : MonoBehaviour
     public Healthbar bar;
 
     private void Start() {
-        player = PlayerMovement.instance.GetComponent<PlayerLifeManager>();
+        player = Player.instance.GetComponent<PlayerLifeManager>();
         player.onHealthChangedCallback += UpdateUI;
     }
 

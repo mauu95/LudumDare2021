@@ -15,7 +15,7 @@ public class EnemyMovement : MonoBehaviour {
 
     public virtual void Start() {
         rb = GetComponent<Rigidbody2D>();
-        player = PlayerMovement.instance.gameObject;
+        player = Player.instance.gameObject;
         ResetPosition();
     }
 

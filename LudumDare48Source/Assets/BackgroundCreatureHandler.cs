@@ -13,7 +13,7 @@ public class BackgroundCreatureHandler : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        player = PlayerMovement.instance.gameObject;
+        player = Player.instance.gameObject;
         SelfPositionAroundPlayer(true);
         spriteRenderer = GetComponent<SpriteRenderer>();
         customAlphaSeed = Random.value * 20;

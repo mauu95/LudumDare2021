@@ -5,7 +5,7 @@ using UnityEngine;
 public class AggressiveEnemyMovement : EnemyMovement {
     private bool m_FacingRight = true;
 
-    public override void Update() {
+    protected override void Update() {
         // movement
         var targetPosition = GetTagetPosition();
         var direction = (targetPosition - transform.position).normalized;

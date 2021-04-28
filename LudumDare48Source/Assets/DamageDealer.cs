@@ -3,27 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageDealer : MonoBehaviour {
-    public bool isPlayer = false;
-    public int damage = 50;
+    public int damage = 5;
 
-    private void OnCollisionEnter2D(Collision2D collision) {
-        if(collision.gameObject.CompareTag("Background"))return;
-        // look for spikes
+    private bool IsSpike(Collision2D collision){
         DamageDealer otherDamageDealer = null;
         foreach (var c in collision.contacts) {
             otherDamageDealer = c.collider.gameObject.GetComponent<DamageDealer>();
-            // found a spike!
-            if (otherDamageDealer) {
+            if (otherDamageDealer)
                 break;
-            }
+        }
+        return otherDamageDealer != null;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if(collision.gameObject.CompareTag("Enemy")){
+            if(IsSpike(collision))
+                return;
+            
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
+            enemy.TakeDamage(damage);
+            Vector3 bumpDirection = (enemy.transform.position - transform.position).normalized;
+            enemy.GetComponent<Movement>().Bump(bumpDirection * 10);
         }
 
-        // collision with other spike
-        if (otherDamageDealer) {
-            // TODO: should disable damage for some time on both spikes...
-            return;
-        }
-        bool otherIsPlayer = collision.gameObject.tag == "Player";
+        /*bool otherIsPlayer = collision.gameObject.tag == "Player";
         if (isPlayer) {
             var lifeManager = collision.gameObject.GetComponent<Enemy>();
             lifeManager.TakeDamage(damage);
@@ -38,6 +41,6 @@ public class DamageDealer : MonoBehaviour {
             var controller = collision.gameObject.GetComponentInParent<PlayerMovement>();
             controller.Bump(bumpDirection * 10);
 
-        }
+        }*/
     }
 }

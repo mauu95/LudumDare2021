@@ -2,24 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour {
+public class EnemyMovement : Movement {
     public float speed;
     public float rotatioSpeed = 1f;
     public float maxDistanceFromPlayer = 100;
 
-
-    protected Rigidbody2D rb;
     protected Vector3 target;
     protected GameObject player;
     protected bool isAggred = false;
 
     public virtual void Start() {
-        rb = GetComponent<Rigidbody2D>();
         player = Player.instance.gameObject;
         ResetPosition();
     }
 
-    public virtual void Update() {
+    protected override void Update() {
         var targetPosition = GetTagetPosition();
         var direction = (targetPosition - transform.position).normalized;
         transform.position = transform.position + direction * Time.deltaTime * speed;
@@ -72,10 +69,6 @@ public class EnemyMovement : MonoBehaviour {
                 target.y = -target.y;
             }
         }
-    }
-
-    public virtual void Bump(Vector3 velocity) {
-        rb.velocity = 3 * velocity;
     }
 
     public void RemoveAggro() {

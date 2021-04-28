@@ -21,5 +21,6 @@ public abstract class Enemy : MonoBehaviour
     {
         Instantiate(deadFishPrefab, transform.position, transform.rotation, transform.parent);
         Shop.instance.addMoney(moneyDrop);
+        Destroy(gameObject);
     }
 }

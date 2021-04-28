@@ -2,24 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : Movement {
 
     public float speed;
-    private Rigidbody2D rb;
 
-
-    private void Start() {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    void Update() {
-        if(transform.position.y>0){
-            rb.gravityScale = 1;
-            return;
-        }
-        else
-            rb.gravityScale = 0;
-
+    protected override void Update() {
+        base.Update();
         if (Input.GetMouseButton(0)) {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = Camera.main.nearClipPlane;
@@ -30,7 +18,9 @@ public class PlayerMovement : MonoBehaviour {
 
     private void DashToward(Vector3 position) {
         Vector3 direction = position - transform.position;
-        rb.velocity = direction.normalized * speed;
+
+        if(transform.position.y<0)
+            rb.velocity = direction.normalized * speed;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);

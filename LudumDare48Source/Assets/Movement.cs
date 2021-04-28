@@ -12,14 +12,13 @@ public abstract class Movement : MonoBehaviour
 
     protected virtual void Update() {
         if(transform.position.y>0)
-            rb.gravityScale = 1;
-        else
-            rb.gravityScale = 0;
+            rb.AddForce(Vector2.down * rb.mass * 50);
     }
 
     public virtual void Bump(Vector3 velocity) {
         rb.velocity = velocity;
     }
+
 
 
 }

@@ -16,6 +16,8 @@ public abstract class EnemyMovement : Movement {
     protected Vector3 target;
     protected GameObject player;
     public EnemyState state;
+    public Transform gfx;
+    private bool m_FacingRight = true;
 
     protected override void Start() {
         base.Start();
@@ -34,6 +36,12 @@ public abstract class EnemyMovement : Movement {
         float theAngle = Mathf.LerpAngle(currentAngle, angle, Time.deltaTime * rotatioSpeed);
 
         transform.rotation = Quaternion.AngleAxis(theAngle, Vector3.forward);
+
+        float move = direction.x;
+        if (move > 0 && !m_FacingRight)
+            Flip();
+        else if (move < 0 && m_FacingRight)
+            Flip();
     }
 
     protected virtual void OnCollisionEnter2D(Collision2D other) {
@@ -100,6 +108,12 @@ public abstract class EnemyMovement : Movement {
     private IEnumerator SetStateIn(EnemyState state, float time){
         yield return new WaitForSeconds(time);
         SetState(state);
+    }
+
+    private void Flip()
+    {
+        m_FacingRight = !m_FacingRight;
+        gfx.Rotate(180f, 0f, 0f);
     }
 
 }

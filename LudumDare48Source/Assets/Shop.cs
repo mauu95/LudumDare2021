@@ -19,6 +19,9 @@ public class Shop : MonoBehaviour
 
     private GameObject player;
 
+    public delegate void OnMoneyChanged();
+    public OnMoneyChanged onMoneyChangedCallback;
+
     private void Start() {
         player = FindObjectOfType<PlayerMovement>().gameObject;
     }
@@ -56,6 +59,8 @@ public class Shop : MonoBehaviour
     public void ResetMoney()
     {
         money = 0;
+        if(onMoneyChangedCallback != null)
+            onMoneyChangedCallback.Invoke();
     }
 
     public void addMoney(int amount){
@@ -64,6 +69,9 @@ public class Shop : MonoBehaviour
         if(money >= price){
             OpenShop();
         }
+
+        if(onMoneyChangedCallback != null)
+            onMoneyChangedCallback.Invoke();
     }
 
     public void SetPrice(int amount)
@@ -74,5 +82,9 @@ public class Shop : MonoBehaviour
     public void UpdatePrice(int difficulty)
     {
         SetPrice(difficulty * 20);
+    }
+    
+    public float GetMoneyPercentage(){
+        return money*1f / price * 100;
     }
 }

@@ -106,6 +106,7 @@ MonoBehaviour:
   triggeredSpeed: 1
   rotatioSpeed: 5
   state: 0
+  gfx: {fileID: 2161899810909310294}
 --- !u!1 &2161899810909310633
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +118,6 @@ GameObject:
   - component: {fileID: 2161899810909310294}
   - component: {fileID: 2161899810909310292}
   - component: {fileID: 2161899810909310295}
-  - component: {fileID: 282446419}
   m_Layer: 0
   m_Name: GFX
   m_TagString: Enemy
@@ -210,16 +210,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &282446419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2161899810909310633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af5f7196602bfe147be4f8d57ea30cb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigBody: {fileID: 4823333631193977522}

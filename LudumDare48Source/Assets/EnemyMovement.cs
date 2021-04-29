@@ -8,15 +8,19 @@ public abstract class EnemyMovement : Movement {
         SCARED,
         TRIGGERED
     }
-    public float speed;
+    private float speed;
+    public float chilledSpeed = 1f;
+    public float scaredSpeed = 1f;
+    public float triggeredSpeed = 1f;
     public float rotatioSpeed = 1f;
     protected Vector3 target;
     protected GameObject player;
-    public EnemyState state = EnemyState.CHILLED;
+    public EnemyState state;
 
     protected override void Start() {
         base.Start();
         player = Player.instance.gameObject;
+        SetState(EnemyState.CHILLED);
     }
 
     protected override void Update() {
@@ -32,9 +36,16 @@ public abstract class EnemyMovement : Movement {
         transform.rotation = Quaternion.AngleAxis(theAngle, Vector3.forward);
     }
 
+    protected virtual void OnCollisionEnter2D(Collision2D other) {
+        
+    }
+
     protected void SetTaget() {
         if(target==null)
             target = GetRandomTarget();
+        
+        if (target.y > 0) 
+            target.y = -target.y;
 
         switch(state){
             case EnemyState.CHILLED:
@@ -51,29 +62,44 @@ public abstract class EnemyMovement : Movement {
                 Debug.LogError("Unhandled Enemy behaviour: " + state);
                 break;
         }
+        if (target.y > 0) 
+            target.y = -target.y;
+
     }
 
     protected Vector2 GetRandomTarget() {
         Vector2 randPos = Random.insideUnitCircle;
         randPos += randPos.normalized * 20;
         target = transform.position + new Vector3(randPos.x, randPos.y);
-        if (target.y > 0) 
-            target.y = -target.y;
         return target;
     }
 
     public void SetState(EnemyState state){
+        switch(state){
+            case EnemyState.CHILLED:
+                speed = chilledSpeed;
+                break;
+            case EnemyState.TRIGGERED:
+                speed = triggeredSpeed;
+                break;
+            case EnemyState.SCARED:
+                speed = scaredSpeed;
+                break;
+            default:
+                Debug.LogError("Unhandled Enemy behaviour: " + state);
+                break;
+        }
         this.state = state;
     }
 
     public void SetState(EnemyState state, float time){
-        this.state = state;
+        SetState(state);
         StartCoroutine(SetStateIn(EnemyState.CHILLED, time));
     }
 
     private IEnumerator SetStateIn(EnemyState state, float time){
         yield return new WaitForSeconds(time);
-        this.state = state;
+        SetState(state);
     }
 
 }

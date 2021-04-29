@@ -23,7 +23,7 @@ public class DamageDealer : MonoBehaviour {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
             Vector3 bumpDirection = (enemy.transform.position - transform.position).normalized;
-            enemy.GetComponent<Movement>().Bump(bumpDirection * 30);
+            enemy.GetComponent<Movement>().Bump(bumpDirection);
         }
 
         /*bool otherIsPlayer = collision.gameObject.tag == "Player";

@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Movement : MonoBehaviour
 {
     protected Rigidbody2D rb;
+    public float bumpForce = 1f;
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -16,7 +17,7 @@ public abstract class Movement : MonoBehaviour
     }
 
     public virtual void Bump(Vector3 velocity) {
-        rb.velocity = velocity;
+        rb.velocity = velocity * bumpForce;
     }
 
 }

@@ -49,7 +49,7 @@ public abstract class EnemyMovement : Movement {
 
         switch(state){
             case EnemyState.CHILLED:
-                if(Mathf.Abs((transform.position - target).magnitude) < 0.1f)
+                if(Mathf.Abs((transform.position - target).magnitude) < 1f)
                     target = GetRandomTarget();
                 break;
             case EnemyState.TRIGGERED:

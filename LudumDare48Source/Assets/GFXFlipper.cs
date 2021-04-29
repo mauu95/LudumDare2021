@@ -7,6 +7,11 @@ public class GFXFlipper : MonoBehaviour
     public Rigidbody2D rigBody;
     private bool m_FacingRight = true;
 
+    private void Start() {
+        if(rigBody == null)
+            rigBody = GetComponent<Rigidbody2D>();
+    }
+
     private void Update() {
         float move = rigBody.velocity.x;
         if (move > 0 && !m_FacingRight)

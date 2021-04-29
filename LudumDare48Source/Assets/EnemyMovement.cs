@@ -2,84 +2,78 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : Movement {
+public abstract class EnemyMovement : Movement {
+    public enum EnemyState{
+        CHILLED,
+        SCARED,
+        TRIGGERED
+    }
     public float speed;
     public float rotatioSpeed = 1f;
-    public float maxDistanceFromPlayer = 100;
-
     protected Vector3 target;
     protected GameObject player;
-    protected bool isAggred = false;
+    public EnemyState state = EnemyState.CHILLED;
 
-    public virtual void Start() {
+    protected override void Start() {
+        base.Start();
         player = Player.instance.gameObject;
-        ResetPosition();
     }
 
     protected override void Update() {
-        var targetPosition = GetTagetPosition();
-        var direction = (targetPosition - transform.position).normalized;
-        transform.position = transform.position + direction * Time.deltaTime * speed;
+        base.Update();
+        SetTaget();
+        Vector3 direction = (target - transform.position).normalized;
+        rb.AddForce(direction*speed);
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float currentAngle = transform.rotation.eulerAngles.z;
         float theAngle = Mathf.LerpAngle(currentAngle, angle, Time.deltaTime * rotatioSpeed);
 
         transform.rotation = Quaternion.AngleAxis(theAngle, Vector3.forward);
+    }
 
-        if (!isAggred && (target - transform.position).magnitude < 0.5) {
-            GoToNewTarget();
-        }
-        if ((transform.position - player.transform.position).magnitude >= maxDistanceFromPlayer) {
-            ResetPosition();
+    protected void SetTaget() {
+        if(target==null)
+            target = GetRandomTarget();
+
+        switch(state){
+            case EnemyState.CHILLED:
+                if(Mathf.Abs((transform.position - target).magnitude) < 0.1f)
+                    target = GetRandomTarget();
+                break;
+            case EnemyState.TRIGGERED:
+                target = player.transform.position;
+                break;
+            case EnemyState.SCARED:
+                target = transform.position + transform.position - player.transform.position;
+                break;
+            default:
+                Debug.LogError("Unhandled Enemy behaviour: " + state);
+                break;
         }
     }
 
-    public void ResetPosition() {
-        rb.velocity = Vector3.zero;
-        SelfPositionAroundPlayer();
-        GoToNewTarget();
-    }
-
-    protected void SelfPositionAroundPlayer() {
-        var randomPosition = Random.insideUnitCircle * 50;
-        var playerPos = player.transform.position;
-        var position = new Vector3(playerPos.x + randomPosition.x, playerPos.y + randomPosition.y);
-        if ((position - playerPos).magnitude < 20) {
-            var vector = (position - playerPos).normalized * 20;
-            position += vector;
-        }
-        if (position.y > 0)
-            position.y = -position.y;
-        transform.position = position;
-    }
-
-    protected Vector3 GetTagetPosition() {
-        if (isAggred) {
-            return player.transform.position;
-        }
+    protected Vector2 GetRandomTarget() {
+        Vector2 randPos = Random.insideUnitCircle;
+        randPos += randPos.normalized * 20;
+        target = transform.position + new Vector3(randPos.x, randPos.y);
+        if (target.y > 0) 
+            target.y = -target.y;
         return target;
     }
 
-    protected void GoToNewTarget() {
-        if (!isAggred) {
-            Vector2 diff = Random.insideUnitCircle * 10;
-            target = transform.position + new Vector3(diff.x, diff.y);
-            if (target.y > 0) {
-                target.y = -target.y;
-            }
-        }
+    public void SetState(EnemyState state){
+        this.state = state;
     }
 
-    public void RemoveAggro() {
-        if (isAggred) {
-            isAggred = false;
-            GoToNewTarget();
-        }
+    public void SetState(EnemyState state, float time){
+        this.state = state;
+        StartCoroutine(SetStateIn(EnemyState.CHILLED, time));
     }
 
-    public void AddAggro() {
-        isAggred = true;
+    private IEnumerator SetStateIn(EnemyState state, float time){
+        yield return new WaitForSeconds(time);
+        this.state = state;
     }
 
 }

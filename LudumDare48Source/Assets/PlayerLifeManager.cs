@@ -40,6 +40,7 @@ public class PlayerLifeManager : MonoBehaviour {
         if (health <= 0) return; // you already died
         int newHealth = health - amount;
         SetHealth(newHealth);
+        audioSource.Play();
         if (health <= 0) {
             StartCoroutine(EndGame());
         }

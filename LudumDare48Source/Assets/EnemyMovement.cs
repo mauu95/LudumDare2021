@@ -86,7 +86,6 @@ public abstract class EnemyMovement : Movement {
         switch(state){
             case EnemyState.CHILLED:
                 speed = chilledSpeed;
-                SetTaget();
                 break;
             case EnemyState.TRIGGERED:
                 speed = triggeredSpeed;

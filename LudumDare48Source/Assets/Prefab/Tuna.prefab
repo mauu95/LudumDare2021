@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyDrop: 20
-  health: 20
+  health: 10
   deadFishPrefab: {fileID: 4511321653741205301, guid: da4c99613cb544b29978c28bd9fbfc51,
     type: 3}
   maxDistanceFromPlayer: 35

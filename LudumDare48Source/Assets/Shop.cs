@@ -45,7 +45,7 @@ public class Shop : MonoBehaviour
     }
 
     public void purchaseLight(){
-        player.GetComponent<PlayerLightManager>().IncreaseLightRadius();
+        player.GetComponent<Player>().LevelUp();
         AudioManager.instance.Play("GainLight");
         ResetMoney();
     }

@@ -22,7 +22,7 @@ public class PlayerLightManager : MonoBehaviour
     }
 
     public void SetLightRadiusBasedOnLevel(int level){
-        float radius = level * 4;
+        float radius = level * 2;
         SetLightRadius(radius);
     }
 

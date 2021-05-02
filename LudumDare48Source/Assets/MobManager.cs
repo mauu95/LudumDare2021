@@ -5,7 +5,7 @@ public class MobManager : MonoBehaviour {
     public static MobManager instance;
     private Player player;
     public int activeMobCount;
-    float spawnDistanceFromPlayer = 20;
+    public float spawnDistanceFromPlayer = 40;
     public int nMobs;
     public mobPrefSpawn[] mobPrefs;
 
@@ -28,10 +28,10 @@ public class MobManager : MonoBehaviour {
             while(activeMobCount <= nMobs-1){
                 GameObject toSpawn = spawnableMobs[Random.Range(0, size)];
                 Vector3 randomPosition = Random.insideUnitCircle;
-                randomPosition += randomPosition.normalized * spawnDistanceFromPlayer;
-                randomPosition += player.transform.position;
                 if(randomPosition.y > 0)
                     randomPosition.y = -randomPosition.y;
+                randomPosition += randomPosition.normalized * spawnDistanceFromPlayer;
+                randomPosition += player.transform.position;
                 Instantiate(toSpawn, randomPosition, Quaternion.identity);
                 activeMobCount++;
             }

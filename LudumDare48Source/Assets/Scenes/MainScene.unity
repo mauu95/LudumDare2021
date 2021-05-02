@@ -2099,8 +2099,6 @@ MonoBehaviour:
   mainLight: {fileID: 329082110}
   secondaryLight: {fileID: 1285464140}
   lightRadius: 0
-  maxRadius: 20
-  radiusUpgradeCounter: 0
 --- !u!114 &369863386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2128,7 +2126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumpForce: 20
-  speed: 10
+  speed: 7
 --- !u!114 &369863388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2141,6 +2139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecde2891b3e384b469a63135b87ac2d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
 --- !u!70 &369863389
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4640,7 +4639,7 @@ PrefabInstance:
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
       propertyPath: healthPerSecond
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 114359963609766598, guid: d16a19242f7da6d4794facdc63b9c915,
         type: 3}
@@ -6339,7 +6338,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 1
+  m_PointLightOuterRadius: 5
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -6498,7 +6497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shopUI: {fileID: 1063142991}
   money: 0
-  price: 20
+  price: 10
 --- !u!114 &1304605706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6567,6 +6566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeMobCount: 0
+  spawnDistanceFromPlayer: 25
   nMobs: 10
   mobPrefs:
   - mobPrefab: {fileID: 2161899809408354083, guid: c397a37b50076894cb6e36cfb844967d,
@@ -6575,7 +6575,7 @@ MonoBehaviour:
     depthEnd: 200
   - mobPrefab: {fileID: 6083077390167328945, guid: b2fbbd106a1da40a1b335f3f85038524,
       type: 3}
-    depthStart: 0
+    depthStart: 30
     depthEnd: 300
   - mobPrefab: {fileID: 8353116459787095289, guid: 83a17333a070b4e3e872529cec8d5bf1,
       type: 3}
@@ -7675,7 +7675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 575459254c354644587ab2cc6dbce42d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d62cf5ec7471fa41804e1a44af25cc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8459,8 +8459,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607154078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.190946, y: 8.429999, z: 0}
-  m_LocalScale: {x: 1400, y: 10, z: 1}
+  m_LocalPosition: {x: 3.190946, y: 13.36, z: 0}
+  m_LocalScale: {x: 1400, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 1368315583}
   m_RootOrder: 0
@@ -9033,7 +9033,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9169,7 +9169,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08752188, y: 0.03392458}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -9180,7 +9180,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.71380824, y: 1.0678492}
   m_EdgeRadius: 0
 --- !u!1 &1832557246
 GameObject:

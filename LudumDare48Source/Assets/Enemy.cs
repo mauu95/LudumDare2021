@@ -7,11 +7,13 @@ public abstract class Enemy : MonoBehaviour
     public int moneyDrop;
     public int health;
     public GameObject deadFishPrefab;
-    public float maxDistanceFromPlayer = 35;
+    public float maxDistanceFromPlayer;
     private Player player;
 
     private void Start() {
         player = Player.instance;
+        maxDistanceFromPlayer = MobManager.instance.spawnDistanceFromPlayer + 20;
+
     }
 
     public void TakeDamage(int damage) {
@@ -26,7 +28,8 @@ public abstract class Enemy : MonoBehaviour
     public void Die()
     {
         Instantiate(deadFishPrefab, transform.position, transform.rotation, transform.parent);
-        Shop.instance.addMoney(moneyDrop); 
+        Shop.instance.addMoney(moneyDrop);
+        Player.instance.GetComponent<PlayerEnergyManager>().AddEnergy(10);
         Despawn();
     }
 

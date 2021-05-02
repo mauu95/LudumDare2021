@@ -84,11 +84,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3730783ecab9294d9c22c70be531db4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyDrop: 10
+  moneyDrop: 4
   health: 10
   deadFishPrefab: {fileID: 4511321653741205301, guid: da4c99613cb544b29978c28bd9fbfc51,
     type: 3}
-  maxDistanceFromPlayer: 35
+  maxDistanceFromPlayer: 40
 --- !u!114 &6269328075820719356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b443fac25cce3cf48a49529042416eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bumpForce: 15
+  bumpForce: 10
   chilledSpeed: 1
   scaredSpeed: 2
   triggeredSpeed: 1

@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private PlayerEnergyManager energyManager;
     private Shop shop;
     private PlayerDamageDealer spike;
+    private PlayerMovement movementManager;
+    private float initialPlayerSpeed;
     public int level;
     private void Awake()
     {
@@ -22,11 +24,14 @@ public class Player : MonoBehaviour
         energyManager = GetComponent<PlayerEnergyManager>();
         shop = Shop.instance;
         spike = GetComponentInChildren<PlayerDamageDealer>();
+        movementManager = GetComponent<PlayerMovement>();
+        initialPlayerSpeed = movementManager.speed;
     }
 
     public void LevelUp(){
         level++;
         transform.localScale = Vector3.one * (1+(0.1f)*level);
+        movementManager.speed = initialPlayerSpeed + level;
         spike.damage = 5*level;
         lightManager.SetLightRadiusBasedOnLevel(level);
         energyManager.UpdateDecay(level);

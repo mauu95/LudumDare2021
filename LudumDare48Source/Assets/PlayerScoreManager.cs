@@ -5,15 +5,17 @@ using TMPro;
 
 public class PlayerScoreManager : MonoBehaviour {
     public TextMeshProUGUI scoreText;
-
+    private Transform player;
     int maxScore = 0;
 
-    // Update is called once per frame
+    private void Start() {
+        player = Player.instance.transform;
+    }
+
     void Update() {
-        float max = Mathf.Max(-transform.position.y, maxScore);
-        if (max >= 200 && maxScore < 200) {
-            //MobManager.instance.AddSharks();
-        }
+        if(!player)
+            return;
+        float max = Mathf.Max(-player.position.y, maxScore);
         maxScore = (int)max;
         scoreText.text = "Max depth: " + maxScore;
     }

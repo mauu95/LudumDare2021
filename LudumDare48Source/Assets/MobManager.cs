@@ -45,9 +45,10 @@ public class MobManager : MonoBehaviour {
 
         foreach(mobPrefSpawn mob in mobPrefs){
             float start = Mathf.Abs(mob.depthStart);
-            float end = Mathf.Abs(mob.depthStart);
-            if(playerDepth > mob.depthStart && playerDepth < end){}
+            float end = Mathf.Abs(mob.depthEnd);
+            if(playerDepth > mob.depthStart && playerDepth < end){
                 result.Add(mob.mobPrefab);
+            }
         }
         return result;
     }

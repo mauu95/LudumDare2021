@@ -88,6 +88,7 @@ MonoBehaviour:
   health: 20
   deadFishPrefab: {fileID: 4511321653741205301, guid: da4c99613cb544b29978c28bd9fbfc51,
     type: 3}
+  maxDistanceFromPlayer: 35
 --- !u!114 &6083077390167328947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b443fac25cce3cf48a49529042416eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bumpForce: 30
+  bumpForce: 15
   chilledSpeed: 2
   scaredSpeed: 3
   triggeredSpeed: 1

@@ -23,6 +23,7 @@ public abstract class EnemyMovement : Movement {
         base.Start();
         player = Player.instance.gameObject;
         SetState(EnemyState.CHILLED);
+        target = GetRandomTarget();
     }
 
     protected override void Update() {

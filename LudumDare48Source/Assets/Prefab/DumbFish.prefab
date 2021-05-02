@@ -88,6 +88,7 @@ MonoBehaviour:
   health: 15
   deadFishPrefab: {fileID: 4511321653741205301, guid: da4c99613cb544b29978c28bd9fbfc51,
     type: 3}
+  maxDistanceFromPlayer: 35
 --- !u!114 &6269328075820719356
 MonoBehaviour:
   m_ObjectHideFlags: 0

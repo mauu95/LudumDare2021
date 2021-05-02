@@ -11,11 +11,8 @@ public class PlayerLifeManager : MonoBehaviour {
     public delegate void OnHealthChanged();
     public OnHealthChanged onHealthChangedCallback;
 
-    private AudioSource audioSource;
-
     void Start() {
         SetMaxHealth();
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void SetHealth(int amount) {
@@ -40,7 +37,6 @@ public class PlayerLifeManager : MonoBehaviour {
         if (health <= 0) return; // you already died
         int newHealth = health - amount;
         SetHealth(newHealth);
-        audioSource.Play();
         if (health <= 0) {
             StartCoroutine(EndGame());
         }

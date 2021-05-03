@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class EnemyDamageDealer : DamageDealer
 {
-        private void OnCollisionEnter2D(Collision2D collision) {
-        if(collision.gameObject.CompareTag("Player")){
-            if(IsSpike(collision))
-                return;
-            
+    protected override void OnCollisionEnter2D(Collision2D collision) {
+        if(IsSpike(collision)){
+            Vector3 bumpDirection = (collision.transform.position - transform.position).normalized;
+            move.Bump(-bumpDirection);
+        }
+        else if(collision.gameObject.CompareTag("Player")){
             PlayerLifeManager player = collision.gameObject.GetComponent<PlayerLifeManager>();
-            player.TakeDamage(damage);
             Vector3 bumpDirection = (player.transform.position - transform.position).normalized;
+            player.TakeDamage(damage);
             player.GetComponent<Movement>().Bump(bumpDirection);
         }
     }

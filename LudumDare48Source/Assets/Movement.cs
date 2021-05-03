@@ -17,7 +17,7 @@ public abstract class Movement : MonoBehaviour
     }
 
     public virtual void Bump(Vector3 velocity) {
-        rb.velocity = velocity * bumpForce;
+        rb.AddForce(velocity*bumpForce);
     }
 
 }

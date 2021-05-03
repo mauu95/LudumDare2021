@@ -26,8 +26,4 @@ public class PlayerMovement : Movement {
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
-    public void Bump(Vector2 velocity) {
-        rb.velocity = rb.velocity + velocity;
-    }
-
 }

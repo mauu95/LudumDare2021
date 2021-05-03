@@ -4,32 +4,18 @@ using UnityEngine;
 
 public class PlayerDamageDealer : DamageDealer
 {
-        private void OnCollisionEnter2D(Collision2D collision) {
-        if(collision.gameObject.CompareTag("Enemy")){
-            if(IsSpike(collision))
-                return;
-            
+    protected override void OnCollisionEnter2D(Collision2D collision) {
+        if(IsSpike(collision)){
+            Vector3 bumpDirection = (collision.transform.position - transform.position).normalized;
+            move.Bump(-bumpDirection);
+            AudioManager.instance.Play("HitMetal");
+        }
+        else if(collision.gameObject.CompareTag("Enemy")){
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.TakeDamage(damage);
             Vector3 bumpDirection = (enemy.transform.position - transform.position).normalized;
+            enemy.TakeDamage(damage);
             enemy.GetComponent<Movement>().Bump(bumpDirection);
         }
-
-        /*bool otherIsPlayer = collision.gameObject.tag == "Player";
-        if (isPlayer) {
-            var lifeManager = collision.gameObject.GetComponent<Enemy>();
-            lifeManager.TakeDamage(damage);
-            var rb = this.gameObject.GetComponentInParent<Rigidbody2D>();
-            var controller = collision.gameObject.GetComponent<EnemyMovement>();
-            controller.Bump(rb.velocity);
-        }
-        if (otherIsPlayer) {
-            var lifeManager = collision.gameObject.GetComponent<PlayerLifeManager>();
-            lifeManager.TakeDamage(damage);
-            var bumpDirection = (collision.gameObject.transform.position - transform.position).normalized;
-            var controller = collision.gameObject.GetComponentInParent<PlayerMovement>();
-            controller.Bump(bumpDirection * 10);
-
-        }*/
     }
 }
+

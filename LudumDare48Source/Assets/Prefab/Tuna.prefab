@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b443fac25cce3cf48a49529042416eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bumpForce: 10
+  bumpForce: 400
   chilledSpeed: 2
   scaredSpeed: 3.5
   triggeredSpeed: 1

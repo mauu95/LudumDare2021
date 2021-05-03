@@ -24,14 +24,16 @@ public class PlayerEnergyManager : MonoBehaviour
     }
 
     public void FillEnergy(){
-        energy = 100;
-        playerLight.SwitchOnPointLight();
+        AddEnergy(1000);
     }
 
     public void AddEnergy(int amount){
         energy += amount;
         if(energy>100)
             energy=100;
+        playerLight.SwitchOnPointLight();
+        if(onEnergyChangedCallback != null)
+            onEnergyChangedCallback.Invoke();
     }
 
     private void ConsumeEnergy(){

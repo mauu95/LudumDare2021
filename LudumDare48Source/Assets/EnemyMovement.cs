@@ -30,7 +30,9 @@ public abstract class EnemyMovement : Movement {
         base.Update();
         SetTaget();
         Vector3 direction = (target - transform.position).normalized;
-        rb.AddForce(direction*speed);
+
+        if(Time.timeScale==1)
+            rb.AddForce(direction*speed);
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         float currentAngle = transform.rotation.eulerAngles.z;

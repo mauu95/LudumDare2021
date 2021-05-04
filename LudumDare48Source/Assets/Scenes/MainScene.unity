@@ -6817,6 +6817,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: TakeDamage
+    clip: {fileID: 8300000, guid: 14daf40a66b734b5b92bef08426ff24c, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!114 &1304605707
 MonoBehaviour:
   m_ObjectHideFlags: 0

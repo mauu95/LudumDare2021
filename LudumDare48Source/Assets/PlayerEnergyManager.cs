@@ -52,6 +52,7 @@ public class PlayerEnergyManager : MonoBehaviour
     private void ConsumeHealth(){
         if(energy>0)return;
         playerHealth.TakeDamage(1);
+        AudioManager.instance.Play("TakeDamage");
     }
 
     public void UpdateDecay(int difficulty)

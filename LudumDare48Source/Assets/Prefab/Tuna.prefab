@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6083077390167328944}
   - component: {fileID: 6083077390167328948}
   - component: {fileID: 6083077390167328949}
-  - component: {fileID: 6083077390167328946}
+  - component: {fileID: 5667666428990197929}
   - component: {fileID: 6083077390167328947}
   m_Layer: 0
   m_Name: Tuna
@@ -72,7 +72,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.24538015, y: -0.064573325}
   m_Size: {x: 2.3511083, y: 1.1801833}
   m_Direction: 1
---- !u!114 &6083077390167328946
+--- !u!114 &5667666428990197929
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6083077390167328945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3730783ecab9294d9c22c70be531db4, type: 3}
+  m_Script: {fileID: 11500000, guid: 809efd60fbde66946a837b662d30f752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moneyDrop: 20

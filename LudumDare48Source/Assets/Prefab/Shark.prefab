@@ -230,6 +230,7 @@ MonoBehaviour:
   state: 0
   gfx: {fileID: 3418703600105824556}
   triggeredTime: 10
+  probOfSpawnTriggered: 0.1
 --- !u!114 &3418703601026080990
 MonoBehaviour:
   m_ObjectHideFlags: 0

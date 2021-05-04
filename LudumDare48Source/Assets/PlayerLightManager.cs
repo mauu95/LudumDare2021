@@ -29,7 +29,7 @@ public class PlayerLightManager : MonoBehaviour
     private void SetLightRadius(float amount){
         mainLight.pointLightOuterRadius = amount;
         mainLight.pointLightInnerRadius = amount/2;
-        secondaryLight.pointLightInnerRadius = amount/3;
+        secondaryLight.pointLightOuterRadius = amount/3;
         lightRadius = amount;
     }
 

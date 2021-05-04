@@ -223,13 +223,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bumpForce: 500
-  chilledSpeed: 4
+  chilledSpeed: 8
   scaredSpeed: 1
-  triggeredSpeed: 6
+  triggeredSpeed: 8
   rotatioSpeed: 5
   state: 0
   gfx: {fileID: 3418703600105824556}
-  triggeredTime: 7
+  triggeredTime: 10
 --- !u!114 &3418703601026080990
 MonoBehaviour:
   m_ObjectHideFlags: 0

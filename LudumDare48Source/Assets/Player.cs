@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     public void LevelUp(){
         level++;
+        HintUI.instance.SetText("LEVEL UP!");
         transform.localScale = Vector3.one * (1+(0.1f)*level);
         movementManager.speed = initialPlayerSpeed + level;
         spike.damage = 5*level;

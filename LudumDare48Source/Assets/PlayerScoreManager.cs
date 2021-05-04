@@ -14,7 +14,6 @@ public class PlayerScoreManager : MonoBehaviour {
 
     private void Start() {
         player = Player.instance.transform;
-        InvokeRepeating("DigliDiAndareGiu", 60f, 180f);
     }
 
     void Update() {
@@ -32,12 +31,5 @@ public class PlayerScoreManager : MonoBehaviour {
 
     public int GetMaxScore() {
         return maxScore;
-    }
-
-    private void DigliDiAndareGiu(){
-        if(lastScore != maxScore)
-            hint.SetText("GO DOWN");
-        
-        lastScore = maxScore;
     }
 }

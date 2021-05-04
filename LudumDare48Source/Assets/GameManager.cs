@@ -48,5 +48,11 @@ public class GameManager : MonoBehaviour {
             Time.timeScale = 1f;
     }
 
+    public void EndGame(){
+        int maxScore = GetComponent<PlayerScoreManager>().GetMaxScore();
+        if (ScoreManager.instance)
+            ScoreManager.instance.GameEnd(maxScore);
+    }
+
     public void QuitGame() => Application.Quit();
 }

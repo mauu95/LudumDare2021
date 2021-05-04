@@ -45,10 +45,7 @@ public class PlayerLifeManager : MonoBehaviour {
     IEnumerator EndGame() {
         Time.timeScale = 0.05f;
         yield return new WaitForSecondsRealtime(2);
-        //TODO implementa il maxscore
-        int maxScore = 0;
-        if (ScoreManager.instance)
-            ScoreManager.instance.GameEnd(maxScore);
+        GameManager.instance.EndGame();
     }
 
 

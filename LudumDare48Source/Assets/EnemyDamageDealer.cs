@@ -14,6 +14,7 @@ public class EnemyDamageDealer : DamageDealer
             Vector3 bumpDirection = (player.transform.position - transform.position).normalized;
             player.TakeDamage(damage);
             player.GetComponent<Movement>().Bump(bumpDirection);
+            AudioManager.instance.Play("Bite");
         }
     }
 }

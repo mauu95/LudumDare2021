@@ -6794,13 +6794,25 @@ MonoBehaviour:
     source: {fileID: 0}
     loop: 0
   - name: Hit
-    clip: {fileID: 8300000, guid: 224f18b50ea11ba47836be214af85d7d, type: 3}
+    clip: {fileID: 8300000, guid: bc3b67336e42fc043adb2406fc4682a5, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
     loop: 0
   - name: HitMetal
     clip: {fileID: 8300000, guid: f1dee690ef712f945bc8f3ce2faaee4d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Hit2
+    clip: {fileID: 8300000, guid: 224f18b50ea11ba47836be214af85d7d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: Bite
+    clip: {fileID: 8300000, guid: a1394511cb4bbf2499fde45c84983c5f, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
@@ -6818,7 +6830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeMobCount: 0
-  spawnDistanceFromPlayer: 25
+  spawnDistanceFromPlayer: 30
   nMobs: 10
   mobPrefs:
   - mobPrefab: {fileID: 2161899809408354083, guid: c397a37b50076894cb6e36cfb844967d,

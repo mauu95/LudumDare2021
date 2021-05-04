@@ -18,11 +18,8 @@ public abstract class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage) {
         health -= damage;
-        if (health <= 0) {
+        if (health <= 0)
             Die();
-        }
-        else 
-            AudioManager.instance.Play("Hit");
     }
 
     public void Die()

@@ -2125,8 +2125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244dd70da8ade4d889886a8d8b5ecb37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bumpForce: 20
+  bumpForce: 1000
   speed: 7
+  stunTime: 0.5
 --- !u!114 &369863388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2168,7 +2169,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 3
   m_AngularDrag: 3
   m_GravityScale: 0
@@ -6553,6 +6554,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: HitMetal
+    clip: {fileID: 8300000, guid: f1dee690ef712f945bc8f3ce2faaee4d, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!114 &1304605707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6615,7 +6622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c052bbb8cd324949948e05535e94b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bottomDepth: 100
+  bottomDepth: 150
   mininum: 0.02
 --- !u!114 &1304605710
 MonoBehaviour:
@@ -8504,7 +8511,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7,
     type: 3}
   m_Color: {r: 0.5647059, g: 0.72156864, b: 0.9215687, a: 1}

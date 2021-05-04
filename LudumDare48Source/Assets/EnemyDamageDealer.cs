@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyDamageDealer : DamageDealer
 {
     protected override void OnCollisionEnter2D(Collision2D collision) {
-        if(IsSpike(collision)){
+        if(IsSpike(collision) && collision.gameObject.CompareTag("Player")){
             Vector3 bumpDirection = (collision.transform.position - transform.position).normalized;
             move.Bump(-bumpDirection);
         }
